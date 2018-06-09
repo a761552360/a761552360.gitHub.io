@@ -5,11 +5,34 @@
     
   <url>
     <loc>https://blog.demonxu.com/a761552360.github.io/iOS-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%88%B0%E7%9B%B8%E5%86%8C/</loc>
-    <lastmod>2018-06-09T02:15:58.099Z</lastmod>
+    <lastmod>2018-06-09T02:25:01.567Z</lastmod>
     <data>
         <display>
         <title>iOS 保存图片到相册</title>
         <pubTime>2018-06-09T10:14:01.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序" url="https://blog.demonxu.com/a761552360.github.io/categories/%E7%A8%8B%E5%BA%8F/"/>
+          
+             
+              <breadCrumb title="iOS" url="https://blog.demonxu.com/a761552360.github.io/categories/%E7%A8%8B%E5%BA%8F/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.demonxu.com/a761552360.github.io/iOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6/</loc>
+    <lastmod>2018-06-09T02:24:31.116Z</lastmod>
+    <data>
+        <display>
+        <title>iOS 获取导航高度</title>
+        <pubTime>2018-06-06T11:12:59.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -200,29 +223,6 @@
         <display>
         <title>iOS 复制到剪切板</title>
         <pubTime>2018-01-12T14:07:44.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="程序" url="https://blog.demonxu.com/a761552360.github.io/categories/%E7%A8%8B%E5%BA%8F/"/>
-          
-             
-              <breadCrumb title="iOS" url="https://blog.demonxu.com/a761552360.github.io/categories/%E7%A8%8B%E5%BA%8F/iOS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.demonxu.com/a761552360.github.io/iOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6/</loc>
-    <lastmod>2018-06-08T10:03:35.225Z</lastmod>
-    <data>
-        <display>
-        <title>iOS 获取导航高度</title>
-        <pubTime>2018-06-06T11:12:59.000Z</pubTime>
         
         <tag>iOS</tag>
          
