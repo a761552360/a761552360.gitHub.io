@@ -1,263 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>iOS 保存图片到相册</title>
-      <link href="/a761552360.github.io/iOS-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%88%B0%E7%9B%B8%E5%86%8C/"/>
-      <url>/a761552360.github.io/iOS-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%88%B0%E7%9B%B8%E5%86%8C/</url>
-      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//画图</span><br><span class="line">+ (UIImage *)snapshot:(UIView *)view size:(CGSize )size&#123;</span><br><span class="line">    UIGraphicsBeginImageContextWithOptions(size,YES,0);</span><br><span class="line">    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];</span><br><span class="line">    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//保存</span><br><span class="line">- (void)saveImageToPhotos:(UIImage*)savedImage &#123;</span><br><span class="line">UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo &#123;</span><br><span class="line">    NSString *msg = nil ;</span><br><span class="line">    if(error != NULL)&#123;</span><br><span class="line">        msg = @&quot;保存图片失败&quot; ;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        msg = @&quot;保存图片成功&quot; ;</span><br><span class="line">    &#125;</span><br><span class="line">    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;保存图片结果提示&quot; message:msg delegate:self cancelButtonTitle:@&quot;确定&quot; otherButtonTitles:nil];</span><br><span class="line">    [alert show];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
+<search>
+  <entry>
+    <title><![CDATA[iOS 保存图片到相册]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%88%B0%E7%9B%B8%E5%86%8C%2F</url>
+    <content type="text"><![CDATA[12345678//画图+ (UIImage *)snapshot:(UIView *)view size:(CGSize )size&#123; UIGraphicsBeginImageContextWithOptions(size,YES,0); [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES]; UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext(); return image;&#125; 1234//保存- (void)saveImageToPhotos:(UIImage*)savedImage &#123; UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);&#125; 12345678910- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo &#123; NSString *msg = nil ; if(error != NULL)&#123; msg = @&quot;保存图片失败&quot; ; &#125;else&#123; msg = @&quot;保存图片成功&quot; ; &#125; UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;保存图片结果提示&quot; message:msg delegate:self cancelButtonTitle:@&quot;确定&quot; otherButtonTitles:nil]; [alert show];&#125;]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> iOS </category>
-          
+        <category>程序</category>
+        <category>iOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Hexo-Next 搭建总结</title>
-      <link href="/a761552360.github.io/Hexo-Next-%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/"/>
-      <url>/a761552360.github.io/Hexo-Next-%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/</url>
-      <content type="html"><![CDATA[<h3 id="文章封面"><a href="#文章封面" class="headerlink" title="文章封面"></a>文章封面</h3><ul><li>如果想添加文章封面的话，需要添加一个字段属性：<code>summary_img</code>，<code>summary_img</code> 的值是图片的路径。</li><li>修改 <code>\themes\next\layout\_macro\post.swing</code> 文件。</li><li>将代码粘贴在上面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;! -- 添加代码 --&gt;</span><br><span class="line">&#123;% if post.summary_img  %&#125;</span><br><span class="line">  &lt;div class=&quot;out-img-topic&quot;&gt;</span><br><span class="line">    &lt;img src=&#123;&#123; post.summary_img &#125;&#125; class=&quot;img-topic&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&lt;! -- 结束 --&gt;</span><br><span class="line">&#123;% if post.description and (not theme.excerpt_description or not is_index) %&#125;</span><br><span class="line">    &lt;div class=&quot;post-description&quot;&gt;</span><br><span class="line">       &#123;&#123; post.description &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="网页加载进度条"><a href="#网页加载进度条" class="headerlink" title="网页加载进度条"></a>网页加载进度条</h3><ul><li><p>打开 <code>/themes/next/layout/_partials/head.swing</code> 文件，在文件末尾添加如下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 网页加载条 --&gt;</span><br><span class="line">&lt;script src=&quot;https://neveryu.github.io/js/src/pace.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li><li><p>然后，打开 <code>/themes/source/css/_custom/custom.styl</code> 文件，在文件末尾添加如下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">/*网页加载条*/</span><br><span class="line">/* This is a compiled file, you should be editing the file in the templates directory */</span><br><span class="line">.pace &#123;</span><br><span class="line">  -webkit-pointer-events: none;</span><br><span class="line">  pointer-events: none;</span><br><span class="line">  -webkit-user-select: none;</span><br><span class="line">  -moz-user-select: none;</span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace-inactive &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace .pace-progress &#123;</span><br><span class="line">  background: #1e92fb;</span><br><span class="line">  position: fixed;</span><br><span class="line">  z-index: 2000;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 100%;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 3px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace .pace-progress-inner &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 0px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100%;</span><br><span class="line">  box-shadow: 0 0 10px #e90f92, 0 0 5px #e90f92;</span><br><span class="line">  opacity: 1.0;</span><br><span class="line">  -webkit-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  -moz-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  -ms-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  -o-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace .pace-activity &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  position: fixed;</span><br><span class="line">  z-index: 2000;</span><br><span class="line">  top: 15px;</span><br><span class="line">  right: 15px;</span><br><span class="line">  width: 14px;</span><br><span class="line">  height: 14px;</span><br><span class="line">  border: solid 2px transparent;</span><br><span class="line">  border-top-color: #e90f92;</span><br><span class="line">  border-left-color: #e90f92;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">  -webkit-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  -moz-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  -ms-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  -o-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  animation: pace-spinner 400ms linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -webkit-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -webkit-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -moz-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -moz-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -o-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -o-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-ms-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -ms-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -ms-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*网页加载条 END*/</span><br></pre></td></tr></table></figure></li></ul><h3 id="修改文章内链接样式"><a href="#修改文章内链接样式" class="headerlink" title="修改文章内链接样式"></a>修改文章内链接样式</h3><ul><li><p>在主题配置文件<code>theme/next/_config.yml</code>，新增配置项：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">custom_css:</span><br><span class="line">  # the style of post body link</span><br><span class="line">  post_body_a:</span><br><span class="line">    enable: true</span><br><span class="line">    normal_color: &quot;#0593d3&quot;</span><br><span class="line">    hover_color: &quot;#0477ab&quot;</span><br></pre></td></tr></table></figure></li><li><p>next主题提供了用户自定义样式的扩展功能，我们只需要在<code>theme/next/source/css/_custom/custom.styl</code>里添加样式就可以新增或覆盖原来的样式。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// custom.styl</span><br><span class="line">if hexo-config(&quot;custom_css.post_body_a.enable&quot;)</span><br><span class="line">  .post-body</span><br><span class="line">    a&#123;</span><br><span class="line">      color: convert(hexo-config(&quot;custom_css.post_body_a.normal_color&quot;));</span><br><span class="line">      border-bottom: none;</span><br><span class="line">      &amp;:hover &#123;</span><br><span class="line">        color: convert(hexo-config(&quot;custom_css.post_body_a.hover_color&quot;));</span><br><span class="line">        text-decoration: underline;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p>这里，我们用了hexo-config()函数读取配置，用stylus的内建函数convert()转换成stylus需要的颜色格式。这个方法最大的优点就是可配置，也支持随时还原成原来主题的格式。</p></li></ul><h3 id="背景透明"><a href="#背景透明" class="headerlink" title="背景透明"></a>背景透明</h3><ul><li>博客根目录 <code>themes\next\source\css\_schemes\Pisces\_layout.styl</code>这个文件的<br>第65行<code>background:</code>删除掉<h3 id="按钮背景"><a href="#按钮背景" class="headerlink" title="按钮背景"></a>按钮背景</h3></li><li>博客根目录 <code>themes\next\source\css\_common\components\post\post-button.styl</code> 第七行修改成<code>background: transparent;</code><h3 id="站点概况背景"><a href="#站点概况背景" class="headerlink" title="站点概况背景"></a>站点概况背景</h3></li><li>博客根目录 <code>themes\next\source\css\_schemes\Pisces\_sidebar.styl</code> 18行删除<h3 id="菜单栏背景"><a href="#菜单栏背景" class="headerlink" title="菜单栏背景"></a>菜单栏背景</h3></li><li><code>next\source\css\_schemes\Pisces\_layout.styl</code> 文件里<code>.header-inner</code> 这个选择器下的<code>background</code> 就是背景色</li></ul><h3 id="修改文章底部的那个带-号的标签"><a href="#修改文章底部的那个带-号的标签" class="headerlink" title="修改文章底部的那个带#号的标签"></a>修改文章底部的那个带#号的标签</h3><ul><li>具体实现方法:修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></li></ul><h3 id="主页文章添加阴影效果"><a href="#主页文章添加阴影效果" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h3><ul><li>打开<code>\themes\next\source\css\_custom\custom.styl</code>,向里面加入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"> .post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="自定义鼠标样式"><a href="#自定义鼠标样式" class="headerlink" title="自定义鼠标样式"></a>自定义鼠标样式</h3><ul><li>打开<code>themes/next/source/css/_custom/custom.styl</code>,在里面写下如下代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 鼠标样式</span><br><span class="line">  * &#123;</span><br><span class="line">      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;),auto!important</span><br><span class="line">  &#125;</span><br><span class="line">  :active &#123;</span><br><span class="line">      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;),auto!important</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-      
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo-Next 搭建总结]]></title>
+    <url>%2Fa761552360.github.io%2FHexo-Next-%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[文章封面 如果想添加文章封面的话，需要添加一个字段属性：summary_img，summary_img 的值是图片的路径。 修改 \themes\next\layout\_macro\post.swing 文件。 将代码粘贴在上面123456789101112&lt;! -- 添加代码 --&gt;&#123;% if post.summary_img %&#125; &lt;div class=&quot;out-img-topic&quot;&gt; &lt;img src=&#123;&#123; post.summary_img &#125;&#125; class=&quot;img-topic&quot;&gt; &lt;/div&gt;&#123;% endif %&#125;&lt;! -- 结束 --&gt;&#123;% if post.description and (not theme.excerpt_description or not is_index) %&#125; &lt;div class=&quot;post-description&quot;&gt; &#123;&#123; post.description &#125;&#125; &lt;/div&gt;&#123;% endif %&#125; 网页加载进度条 打开 /themes/next/layout/_partials/head.swing 文件，在文件末尾添加如下代码： 12&lt;!-- 网页加载条 --&gt;&lt;script src=&quot;https://neveryu.github.io/js/src/pace.min.js&quot;&gt;&lt;/script&gt; 然后，打开 /themes/source/css/_custom/custom.styl 文件，在文件末尾添加如下代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/*网页加载条*//* This is a compiled file, you should be editing the file in the templates directory */.pace &#123; -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none;&#125;.pace-inactive &#123; display: none;&#125;.pace .pace-progress &#123; background: #1e92fb; position: fixed; z-index: 2000; top: 0; right: 100%; width: 100%; height: 3px;&#125;.pace .pace-progress-inner &#123; display: block; position: absolute; right: 0px; width: 100px; height: 100%; box-shadow: 0 0 10px #e90f92, 0 0 5px #e90f92; opacity: 1.0; -webkit-transform: rotate(3deg) translate(0px, -4px); -moz-transform: rotate(3deg) translate(0px, -4px); -ms-transform: rotate(3deg) translate(0px, -4px); -o-transform: rotate(3deg) translate(0px, -4px); transform: rotate(3deg) translate(0px, -4px);&#125;.pace .pace-activity &#123; display: block; position: fixed; z-index: 2000; top: 15px; right: 15px; width: 14px; height: 14px; border: solid 2px transparent; border-top-color: #e90f92; border-left-color: #e90f92; border-radius: 10px; -webkit-animation: pace-spinner 400ms linear infinite; -moz-animation: pace-spinner 400ms linear infinite; -ms-animation: pace-spinner 400ms linear infinite; -o-animation: pace-spinner 400ms linear infinite; animation: pace-spinner 400ms linear infinite;&#125;@-webkit-keyframes pace-spinner &#123; 0% &#123; -webkit-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -webkit-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-moz-keyframes pace-spinner &#123; 0% &#123; -moz-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -moz-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-o-keyframes pace-spinner &#123; 0% &#123; -o-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -o-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-ms-keyframes pace-spinner &#123; 0% &#123; -ms-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -ms-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@keyframes pace-spinner &#123; 0% &#123; transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;/*网页加载条 END*/ 修改文章内链接样式 在主题配置文件theme/next/_config.yml，新增配置项： 123456custom_css: # the style of post body link post_body_a: enable: true normal_color: &quot;#0593d3&quot; hover_color: &quot;#0477ab&quot; next主题提供了用户自定义样式的扩展功能，我们只需要在theme/next/source/css/_custom/custom.styl里添加样式就可以新增或覆盖原来的样式。 1234567891011// custom.stylif hexo-config(&quot;custom_css.post_body_a.enable&quot;) .post-body a&#123; color: convert(hexo-config(&quot;custom_css.post_body_a.normal_color&quot;)); border-bottom: none; &amp;:hover &#123; color: convert(hexo-config(&quot;custom_css.post_body_a.hover_color&quot;)); text-decoration: underline; &#125; &#125; 这里，我们用了hexo-config()函数读取配置，用stylus的内建函数convert()转换成stylus需要的颜色格式。这个方法最大的优点就是可配置，也支持随时还原成原来主题的格式。 背景透明 博客根目录 themes\next\source\css\_schemes\Pisces\_layout.styl这个文件的第65行background:删除掉按钮背景 博客根目录 themes\next\source\css\_common\components\post\post-button.styl 第七行修改成background: transparent;站点概况背景 博客根目录 themes\next\source\css\_schemes\Pisces\_sidebar.styl 18行删除菜单栏背景 next\source\css\_schemes\Pisces\_layout.styl 文件里.header-inner 这个选择器下的background 就是背景色 修改文章底部的那个带#号的标签 具体实现方法:修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&quot;tag&quot;&gt;#，将 # 换成&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt; 主页文章添加阴影效果 打开\themes\next\source\css\_custom\custom.styl,向里面加入：12345678// 主页文章添加阴影效果 .post &#123; margin-top: 60px; margin-bottom: 60px; padding: 25px; -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5); -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5); &#125; 自定义鼠标样式 打开themes/next/source/css/_custom/custom.styl,在里面写下如下代码1234567// 鼠标样式 * &#123; cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;),auto!important &#125; :active &#123; cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;),auto!important &#125;]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> Hexo </category>
-          
+        <category>程序</category>
+        <category>Hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>阿里云ECS 搭建Shadowsocks</title>
-      <link href="/a761552360.github.io/%E9%98%BF%E9%87%8C%E4%BA%91ECS-%E6%90%AD%E5%BB%BAShadowsocks/"/>
-      <url>/a761552360.github.io/%E9%98%BF%E9%87%8C%E4%BA%91ECS-%E6%90%AD%E5%BB%BAShadowsocks/</url>
-      <content type="html"><![CDATA[<a id="more"></a><h3 id="安装shadowsocks-系统为CentOS7"><a href="#安装shadowsocks-系统为CentOS7" class="headerlink" title="安装shadowsocks(系统为CentOS7)"></a>安装shadowsocks(系统为CentOS7)</h3><p>在命令行依次输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure></p><p><img src="/阿里云ECS-搭建Shadowsocks/1.jpeg" alt="加密方式"></p><p>然后服务器配置完成<br>shadowsocks配置文件在<code>/etc/shadowsock.json</code><br>如果需要配置多端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;my_server_ip&quot;，</span><br><span class="line">        &quot;local_address&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">        &quot;local_port&quot;:1080,</span><br><span class="line">        &quot;port_password&quot;: &#123;</span><br><span class="line">            &quot;8381&quot;: &quot;foobar1&quot;,</span><br><span class="line">            &quot;8382&quot;: &quot;foobar2&quot;,</span><br><span class="line">            &quot;8383&quot;: &quot;foobar3&quot;,</span><br><span class="line">            &quot;8384&quot;: &quot;foobar4&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;timeout&quot;:300,</span><br><span class="line">        &quot;method&quot;:&quot;aes-256-cfb&quot;,</span><br><span class="line">        &quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>然后需要重启shadowsock<br>shadowsock命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">启动：systemctl start shadowsocks.service</span><br><span class="line">停止：systemctl stop shadowsocks.service</span><br><span class="line">重启：systemctl restart shadowsocks.service</span><br><span class="line">状态：systemctl status shadowsocks.service</span><br></pre></td></tr></table></figure></p><p>CentOS7下需要开启端口<br>开启端口firewall-cmd –zone=public –add-port=&lt;端口号&gt;/tcp –permanent<br>例如<br><code>firewall-cmd --zone=public --add-port=80/tcp --permanent</code><br>重启防火墙<br><code>firewall-cmd --reload</code><br>最后在登录阿里云网站管理ECS<br>添加规则<br><img src="/阿里云ECS-搭建Shadowsocks/2.png" alt="点击管理"><br><img src="/阿里云ECS-搭建Shadowsocks/3.png" alt="本实例安全组"><br><img src="/阿里云ECS-搭建Shadowsocks/4.png" alt="配置规则"><br><img src="/阿里云ECS-搭建Shadowsocks/5.png" alt="添加安全组规则"><br><img src="/阿里云ECS-搭建Shadowsocks/6.png" alt="规则详细"><br>最后需要重启服务器后规则才能生效<br><code>reboot</code></p><h3 id="Shadowsocks-客户端下载"><a href="#Shadowsocks-客户端下载" class="headerlink" title="Shadowsocks 客户端下载"></a>Shadowsocks 客户端下载</h3><ul><li>iPhone <a href="https://itunes.apple.com/cn/app/firstwingy/id1316416848?mt=8" target="_blank" rel="noopener">FirstWingy</a></li><li>Windows <a href="https://github.com/shadowsocks/shadowsocks-windows" target="_blank" rel="noopener">shadowsocks</a> 或者<a href="https://pan.baidu.com/s/1GtQ3ZpnwRtiTiWKjrfb1IA" target="_blank" rel="noopener">百度云链接</a> 密码:t3t5</li><li>Mac <a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">shadowsocks-NG</a> 或者 <a href="https://pan.baidu.com/s/1DDKjs240y2Fj81yYwJMGiQ" target="_blank" rel="noopener">百度云链接</a> 密码: br8d</li><li>Andriod <a href="https://pan.baidu.com/s/1OOjNLSwNVUPaqzJ1NJS1Zg" target="_blank" rel="noopener">百度云链接</a> 密码: ev8f</li></ul><h3 id="使用KCPTun加速Shadowsocks-个人测试阿里云ECS无法使用，可在其他VPS上使用-vultr-测试可使用"><a href="#使用KCPTun加速Shadowsocks-个人测试阿里云ECS无法使用，可在其他VPS上使用-vultr-测试可使用" class="headerlink" title="使用KCPTun加速Shadowsocks(个人测试阿里云ECS无法使用，可在其他VPS上使用,vultr 测试可使用)"></a>使用KCPTun加速Shadowsocks(个人测试阿里云ECS无法使用，可在其他VPS上使用,<a href="https://www.vultr.com/?ref=7259520" target="_blank" rel="noopener">vultr</a> 测试可使用)</h3><h5 id="KCPTun服务安装"><a href="#KCPTun服务安装" class="headerlink" title="KCPTun服务安装"></a>KCPTun服务安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 下载脚本</span><br><span class="line">wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh</span><br><span class="line">// 赋予权限</span><br><span class="line">chmod +x ./kcptun.sh</span><br><span class="line">// 执行脚本</span><br><span class="line">./kcptun.sh</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[阿里云ECS 搭建Shadowsocks]]></title>
+    <url>%2Fa761552360.github.io%2F%E9%98%BF%E9%87%8C%E4%BA%91ECS-%E6%90%AD%E5%BB%BAShadowsocks%2F</url>
+    <content type="text"><![CDATA[安装shadowsocks(系统为CentOS7)在命令行依次输入123wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.shchmod +x shadowsocks.sh./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log 然后服务器配置完成shadowsocks配置文件在/etc/shadowsock.json如果需要配置多端口1234567891011121314&#123; &quot;server&quot;:&quot;my_server_ip&quot;， &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;port_password&quot;: &#123; &quot;8381&quot;: &quot;foobar1&quot;, &quot;8382&quot;: &quot;foobar2&quot;, &quot;8383&quot;: &quot;foobar3&quot;, &quot;8384&quot;: &quot;foobar4&quot; &#125;, &quot;timeout&quot;:300, &quot;method&quot;:&quot;aes-256-cfb&quot;, &quot;fast_open&quot;: false&#125; 然后需要重启shadowsockshadowsock命令如下1234启动：systemctl start shadowsocks.service停止：systemctl stop shadowsocks.service重启：systemctl restart shadowsocks.service状态：systemctl status shadowsocks.service CentOS7下需要开启端口开启端口firewall-cmd –zone=public –add-port=&lt;端口号&gt;/tcp –permanent例如firewall-cmd --zone=public --add-port=80/tcp --permanent重启防火墙firewall-cmd --reload最后在登录阿里云网站管理ECS添加规则最后需要重启服务器后规则才能生效reboot Shadowsocks 客户端下载 iPhone FirstWingy Windows shadowsocks 或者百度云链接 密码:t3t5 Mac shadowsocks-NG 或者 百度云链接 密码: br8d Andriod 百度云链接 密码: ev8f 使用KCPTun加速Shadowsocks(个人测试阿里云ECS无法使用，可在其他VPS上使用,vultr 测试可使用)KCPTun服务安装123456// 下载脚本wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh// 赋予权限chmod +x ./kcptun.sh// 执行脚本./kcptun.sh]]></content>
       <categories>
-          
-          <category> Centos </category>
-          
+        <category>Centos</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 科学上网 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Mac快捷键</title>
-      <link href="/a761552360.github.io/Mac%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-      <url>/a761552360.github.io/Mac%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-      <content type="html"><![CDATA[<h2 id="Finder"><a href="#Finder" class="headerlink" title="Finder"></a>Finder</h2><h3 id="显示隐藏文件夹"><a href="#显示隐藏文件夹" class="headerlink" title="显示隐藏文件夹"></a>显示隐藏文件夹</h3><ul><li><p>Command+Shift+.</p><h3 id="前往路径"><a href="#前往路径" class="headerlink" title="前往路径"></a>前往路径</h3></li><li><p>Command+Shift+G</p><h3 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h3></li><li><p>Command+Shif+3(全屏)</p></li><li>Command+Shif+4(可选)</li></ul>]]></content>
-      
+      <tags>
+        <tag>科学上网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac快捷键]]></title>
+    <url>%2Fa761552360.github.io%2FMac%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[Finder显示隐藏文件夹 Command+Shift+. 前往路径 Command+Shift+G 截屏 Command+Shif+3(全屏) Command+Shif+4(可选)]]></content>
       <categories>
-          
-          <category> Mac </category>
-          
+        <category>Mac</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 技巧 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>iOS7获取Mac地址</title>
-      <link href="/a761552360.github.io/iOS7%E8%8E%B7%E5%8F%96Mac%E5%9C%B0%E5%9D%80/"/>
-      <url>/a761552360.github.io/iOS7%E8%8E%B7%E5%8F%96Mac%E5%9C%B0%E5%9D%80/</url>
-      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;NetworkExtension/NetworkExtension.h&gt;</span><br><span class="line">#import &lt;SystemConfiguration/CaptiveNetwork.h&gt;</span><br><span class="line"></span><br><span class="line">- (NSString *)getMacAddress &#123;</span><br><span class="line">    NSArray *array = CFBridgingRelease(CNCopySupportedInterfaces());</span><br><span class="line">    NSDictionary *info = nil;</span><br><span class="line">    for (NSString *interface in array) &#123;</span><br><span class="line">        info = CFBridgingRelease(CNCopyCurrentNetworkInfo((CFStringRef)interface));</span><br><span class="line">        if (info &amp;&amp;[info count]) &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return info[@&quot;BSSID&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS7获取Mac地址]]></title>
+    <url>%2Fa761552360.github.io%2FiOS7%E8%8E%B7%E5%8F%96Mac%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[1234567891011121314#import &lt;NetworkExtension/NetworkExtension.h&gt;#import &lt;SystemConfiguration/CaptiveNetwork.h&gt;- (NSString *)getMacAddress &#123; NSArray *array = CFBridgingRelease(CNCopySupportedInterfaces()); NSDictionary *info = nil; for (NSString *interface in array) &#123; info = CFBridgingRelease(CNCopyCurrentNetworkInfo((CFStringRef)interface)); if (info &amp;&amp;[info count]) &#123; break; &#125; &#125; return info[@&quot;BSSID&quot;];&#125;]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> iOS </category>
-          
+        <category>程序</category>
+        <category>iOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>iOS 获取导航高度</title>
-      <link href="/a761552360.github.io/iOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6/"/>
-      <url>/a761552360.github.io/iOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6/</url>
-      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 状态栏(statusbar)</span><br><span class="line">CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];    </span><br><span class="line">NSLog(@&quot;status width - %f&quot;, rectStatus.size.width); // 宽度    </span><br><span class="line">NSLog(@&quot;status height - %f&quot;, rectStatus.size.height);   // 高度    </span><br><span class="line">    </span><br><span class="line">// 导航栏（navigationbar）    </span><br><span class="line">CGRect rectNav = self.navigationController.navigationBar.frame;    </span><br><span class="line">NSLog(@&quot;nav width - %f&quot;, rectNav.size.width); // 宽度    </span><br><span class="line">NSLog(@&quot;nav height - %f&quot;, rectNav.size.height);   // 高度</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 获取导航高度]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[123456789// 状态栏(statusbar)CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame]; NSLog(@&quot;status width - %f&quot;, rectStatus.size.width); // 宽度 NSLog(@&quot;status height - %f&quot;, rectStatus.size.height); // 高度 // 导航栏（navigationbar） CGRect rectNav = self.navigationController.navigationBar.frame; NSLog(@&quot;nav width - %f&quot;, rectNav.size.width); // 宽度 NSLog(@&quot;nav height - %f&quot;, rectNav.size.height); // 高度]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> iOS </category>
-          
+        <category>程序</category>
+        <category>iOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>素笺心语</title>
-      <link href="/a761552360.github.io/%E7%B4%A0%E7%AC%BA%E5%BF%83%E8%AF%AD/"/>
-      <url>/a761552360.github.io/%E7%B4%A0%E7%AC%BA%E5%BF%83%E8%AF%AD/</url>
-      <content type="html"><![CDATA[<p>　　午夜，梦醒，辗转，无眠。散养的小字依然没有排列成序，在一朵月光中漂泊流浪。我在一隅安寂里，任心泛起层层涟漪。<br>　　无声的岁月，无奈的叹息，回首，我有昨天不可忆。忧伤和欢喜的交织的日子，在暮鼓晨钟里低吟浅唱。花开花谢，月圆月缺，总是在时序里更迭，散落于岁月山河。<br>　　不是，每个人的生活都事事如意；不是，所有的花开都有结果；不是，付出就一定有收获。光阴的故事里，一味烟火平覆了许多影影绰绰，打磨着记忆里的陈词旧歌。用一杯茶的清香忆一朵往事的悠扬，一米阳光在一朵清露上歌唱。如是，无需轻言遗憾，不叹，云烟迷蒙了最美的华年。只依着光阴的脉络，循着时序有节，持一束柔软默默向前。<br>　　如若，情思不是一页脆薄的纸，就不会有现在逶迤的心路；如若，忧伤，还在心底幽居，柔肠百转又返回了最初，深种的执意半途而去。浮生，一世，走不出故事里的故事。依依，是流年暗生的情愫。<br>　　习惯了，取一朵往事填充空白的时光，不去想，诗和远方在路上还有多远多长。那一场遇见，一场离散，在光阴的痕上细说人生悲欢。落花的窗前，细雨染流年。深情的眸底，我以一眉清喜悦纳人生变幻。散笺一行小字，将琐琐碎碎的日子素描成一段心曲，仿佛总是找不出完美的主题。曾经的每一个交集深深隐于光阴的痕迹，近在咫尺，又恍如隔世。<br>　　素来，与众生有疏离。是是非非绕于一身，不如寻一方静谧，让檐下听雨，月下听风的温馨美丽，来诗意一程平凡的人生路。如若，灵魂里植一朵素洁的茉莉，何忧不心香四溢，清净自喜？轻挽一朵淡定从容，深种一眉波澜不惊，妥帖我的烟火人生。如若还有雨丝幽居在心里，也只是，我还在想着你…<br>　　总想，即使这素素的红尘落满忧伤，亦可以持一朵清雅的墨香行于阡陌之上。诗和远方在前行的路上旖旎而又馨香。心有柔软，而大片大片的清高又存放于血脉之中。红尘中的万水千山，任你我再相见，我心再无波澜。轻拢一阕删繁从简，度我的现世安暖。浓浓淡淡，相携相牵的岁月，相宜静好。就如，你我，相念又相安。<br>　　淡而静的日子，我将时光斟满杯盏。漫漫人生，岁月长河，我们能做到的也不可能是，将初初一见的美好润泽成一片秋水长天。花好万般与无法如愿总是痴缠交挽，又相互摩擦。你的美，一缕飘向，去到了我去不了的地方。捧一盏静好的光阴，缓缓氲开，所有的思绪都交给了一场最美的相遇。我在一朵似曾相识里寂静欢喜，指尖轻捻的诗句，一直为你悄悄落笔。<br>　　红尘路，我曾用心种下一枚期许，一生一世，铺满我所有的流年记忆。时光匆匆，逶迤的年轮划过半圈，一如某一份人生，半生烟雨在心灵里飘浮，洇湿脚下的路。日月山河，走旧的是光阴，走不老的永远是心情，一路忘记，又一路萌发。<br>　　永远安静，是我想要的人生。我在无人欣赏的角落，开着自己喜欢的样子。而来时路，明日风，又总在一份静谧里如潮水汹涌而至，淹没我落花般的思绪……</p>]]></content>
-      
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[素笺心语]]></title>
+    <url>%2Fa761552360.github.io%2F%E7%B4%A0%E7%AC%BA%E5%BF%83%E8%AF%AD%2F</url>
+    <content type="text"><![CDATA[午夜，梦醒，辗转，无眠。散养的小字依然没有排列成序，在一朵月光中漂泊流浪。我在一隅安寂里，任心泛起层层涟漪。 无声的岁月，无奈的叹息，回首，我有昨天不可忆。忧伤和欢喜的交织的日子，在暮鼓晨钟里低吟浅唱。花开花谢，月圆月缺，总是在时序里更迭，散落于岁月山河。 不是，每个人的生活都事事如意；不是，所有的花开都有结果；不是，付出就一定有收获。光阴的故事里，一味烟火平覆了许多影影绰绰，打磨着记忆里的陈词旧歌。用一杯茶的清香忆一朵往事的悠扬，一米阳光在一朵清露上歌唱。如是，无需轻言遗憾，不叹，云烟迷蒙了最美的华年。只依着光阴的脉络，循着时序有节，持一束柔软默默向前。 如若，情思不是一页脆薄的纸，就不会有现在逶迤的心路；如若，忧伤，还在心底幽居，柔肠百转又返回了最初，深种的执意半途而去。浮生，一世，走不出故事里的故事。依依，是流年暗生的情愫。 习惯了，取一朵往事填充空白的时光，不去想，诗和远方在路上还有多远多长。那一场遇见，一场离散，在光阴的痕上细说人生悲欢。落花的窗前，细雨染流年。深情的眸底，我以一眉清喜悦纳人生变幻。散笺一行小字，将琐琐碎碎的日子素描成一段心曲，仿佛总是找不出完美的主题。曾经的每一个交集深深隐于光阴的痕迹，近在咫尺，又恍如隔世。 素来，与众生有疏离。是是非非绕于一身，不如寻一方静谧，让檐下听雨，月下听风的温馨美丽，来诗意一程平凡的人生路。如若，灵魂里植一朵素洁的茉莉，何忧不心香四溢，清净自喜？轻挽一朵淡定从容，深种一眉波澜不惊，妥帖我的烟火人生。如若还有雨丝幽居在心里，也只是，我还在想着你… 总想，即使这素素的红尘落满忧伤，亦可以持一朵清雅的墨香行于阡陌之上。诗和远方在前行的路上旖旎而又馨香。心有柔软，而大片大片的清高又存放于血脉之中。红尘中的万水千山，任你我再相见，我心再无波澜。轻拢一阕删繁从简，度我的现世安暖。浓浓淡淡，相携相牵的岁月，相宜静好。就如，你我，相念又相安。 淡而静的日子，我将时光斟满杯盏。漫漫人生，岁月长河，我们能做到的也不可能是，将初初一见的美好润泽成一片秋水长天。花好万般与无法如愿总是痴缠交挽，又相互摩擦。你的美，一缕飘向，去到了我去不了的地方。捧一盏静好的光阴，缓缓氲开，所有的思绪都交给了一场最美的相遇。我在一朵似曾相识里寂静欢喜，指尖轻捻的诗句，一直为你悄悄落笔。 红尘路，我曾用心种下一枚期许，一生一世，铺满我所有的流年记忆。时光匆匆，逶迤的年轮划过半圈，一如某一份人生，半生烟雨在心灵里飘浮，洇湿脚下的路。日月山河，走旧的是光阴，走不老的永远是心情，一路忘记，又一路萌发。 永远安静，是我想要的人生。我在无人欣赏的角落，开着自己喜欢的样子。而来时路，明日风，又总在一份静谧里如潮水汹涌而至，淹没我落花般的思绪……]]></content>
       <categories>
-          
-          <category> 情感 </category>
-          
+        <category>情感</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 心情 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>iOS导航栏显示隐藏以及状态改变</title>
-      <link href="/a761552360.github.io/iOS%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E4%BB%A5%E5%8F%8A%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98/"/>
-      <url>/a761552360.github.io/iOS%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E4%BB%A5%E5%8F%8A%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98/</url>
-      <content type="html"><![CDATA[<p>首先在info.plist中添加 <code>View controller-based status bar appearance</code> 并设为NO</p><p>然后在需要的地方添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//状态栏隐藏</span><br><span class="line">[UIApplication sharedApplication].statusBarHidden = YES;</span><br><span class="line">//状态栏颜色改变</span><br><span class="line">[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS导航栏显示隐藏以及状态改变]]></title>
+    <url>%2Fa761552360.github.io%2FiOS%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E4%BB%A5%E5%8F%8A%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98%2F</url>
+    <content type="text"><![CDATA[首先在info.plist中添加 View controller-based status bar appearance 并设为NO 然后在需要的地方添加1234//状态栏隐藏[UIApplication sharedApplication].statusBarHidden = YES;//状态栏颜色改变[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> iOS </category>
-          
+        <category>程序</category>
+        <category>iOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Python Django 初始化</title>
-      <link href="/a761552360.github.io/Python-Django-%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
-      <url>/a761552360.github.io/Python-Django-%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
-      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">django-admin.py startproject ledemon#创建工程</span><br><span class="line">python manage.py runserver 0.0.0.0:8000#运行工程</span><br><span class="line">python manage.py createsuperuser#添加超级管理员</span><br><span class="line">python manage.py migrate#初始化数据库</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python Django 初始化]]></title>
+    <url>%2Fa761552360.github.io%2FPython-Django-%E5%88%9D%E5%A7%8B%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[1234django-admin.py startproject ledemon#创建工程python manage.py runserver 0.0.0.0:8000#运行工程python manage.py createsuperuser#添加超级管理员python manage.py migrate#初始化数据库]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> Python </category>
-          
+        <category>程序</category>
+        <category>Python</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Mac Python2.7 安装MySQLdb问题解决</title>
-      <link href="/a761552360.github.io/Mac-Python2-7-%E5%AE%89%E8%A3%85MySQLdb%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-      <url>/a761552360.github.io/Mac-Python2-7-%E5%AE%89%E8%A3%85MySQLdb%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
-      <content type="html"><![CDATA[<p>首先卸载旧版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall MySQL-python</span><br><span class="line">sudo pip uninstall MySQL-python</span><br></pre></td></tr></table></figure></p><p>然后重新安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql --universal</span><br><span class="line">sudo pip install MySQL-python</span><br></pre></td></tr></table></figure></p><h3 id="问题错误："><a href="#问题错误：" class="headerlink" title="问题错误："></a>问题错误：</h3><ul><li><p>解决 <code>Reason: image not found</code>错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib/usr/lib/libmysqlclient.18.dylib</span><br><span class="line">sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</span><br></pre></td></tr></table></figure></li><li><p>pip安装时报错（注意电脑操作系统是32还是64）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PATH=&quot;/usr/local/mysql/bin:$&#123;PATH&#125;&quot;</span><br><span class="line">export PATH</span><br><span class="line">export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/</span><br><span class="line">export VERSIONER_PYTHON_PREFER_64_BIT=no</span><br><span class="line">export VERSIONER_PYTHON_PREFER_32_BIT=yes</span><br></pre></td></tr></table></figure></li><li><p>错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File &quot;mysql.py&quot;, line 4, in &lt;module&gt;</span><br><span class="line">    import MySQLdb</span><br><span class="line">  File &quot;/Library/Python/2.7/site-packages/MySQLdb/__init__.py&quot;, line 19, in &lt;module&gt;</span><br><span class="line">    import _mysql</span><br><span class="line">ImportError: dlopen(/Library/Python/2.7/site-packages/_mysql.so, 2): no suitable image found.  Did find:</span><br><span class="line">/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture</span><br><span class="line">/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture</span><br></pre></td></tr></table></figure></li></ul><p>解决办法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo install_name_tool -change libmysqlclient.18.dylib  /usr/local/mysql/lib/libmysqlclient.18.dylib  /Library/Python/2.7/site-packages/_mysql.so</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>iOS 复制到剪切板</title>
-      <link href="/a761552360.github.io/iOS-%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/"/>
-      <url>/a761552360.github.io/iOS-%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/</url>
-      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];</span><br><span class="line">pasteboard.string = self.label.text;</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac Python2.7 安装MySQLdb问题解决]]></title>
+    <url>%2Fa761552360.github.io%2FMac-Python2-7-%E5%AE%89%E8%A3%85MySQLdb%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[首先卸载旧版本12pip uninstall MySQL-pythonsudo pip uninstall MySQL-python 然后重新安装12brew install mysql --universalsudo pip install MySQL-python 问题错误： 解决 Reason: image not found错误 12sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib/usr/lib/libmysqlclient.18.dylibsudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql pip安装时报错（注意电脑操作系统是32还是64） 12345PATH=&quot;/usr/local/mysql/bin:$&#123;PATH&#125;&quot;export PATHexport DYLD_LIBRARY_PATH=/usr/local/mysql/lib/export VERSIONER_PYTHON_PREFER_64_BIT=noexport VERSIONER_PYTHON_PREFER_32_BIT=yes 错误 1234567File &quot;mysql.py&quot;, line 4, in &lt;module&gt; import MySQLdb File &quot;/Library/Python/2.7/site-packages/MySQLdb/__init__.py&quot;, line 19, in &lt;module&gt; import _mysqlImportError: dlopen(/Library/Python/2.7/site-packages/_mysql.so, 2): no suitable image found. Did find:/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture 解决办法1sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /Library/Python/2.7/site-packages/_mysql.so]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 复制到剪切板]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF%2F</url>
+    <content type="text"><![CDATA[12UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];pasteboard.string = self.label.text;]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> iOS </category>
-          
+        <category>程序</category>
+        <category>iOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>iOS 利用Masonry实现简单动画</title>
-      <link href="/a761552360.github.io/iOS-%E5%88%A9%E7%94%A8Masonry%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB/"/>
-      <url>/a761552360.github.io/iOS-%E5%88%A9%E7%94%A8Masonry%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB/</url>
-      <content type="html"><![CDATA[<ul><li>和普通的方法实现差不多，重点只是修改约束后调用<code>[view.superview layoutIfNeeded]</code>而已<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[view mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">make.top.mas_equalTo(400);</span><br><span class="line">make.left.mas_equalTo(100);</span><br><span class="line">make.size.mas_equalTo(CGSizeMake(100, 100));</span><br><span class="line">&#125;];</span><br><span class="line">[view.superview layoutIfNeeded];//如果其约束还没有生成的时候需要动画的话，就请先强制刷新后才写动画，否则所有没生成的约束会直接跑动画</span><br><span class="line">[UIView animateWithDuration:3 animations:^&#123;</span><br><span class="line">[view mas_updateConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">make.left.mas_equalTo(200);</span><br><span class="line">&#125;];</span><br><span class="line">[view.superview layoutIfNeeded];//强制绘制</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-      
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 利用Masonry实现简单动画]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E5%88%A9%E7%94%A8Masonry%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB%2F</url>
+    <content type="text"><![CDATA[和普通的方法实现差不多，重点只是修改约束后调用[view.superview layoutIfNeeded]而已123456789101112[view mas_makeConstraints:^(MASConstraintMaker *make) &#123; make.top.mas_equalTo(400); make.left.mas_equalTo(100); make.size.mas_equalTo(CGSizeMake(100, 100));&#125;];[view.superview layoutIfNeeded];//如果其约束还没有生成的时候需要动画的话，就请先强制刷新后才写动画，否则所有没生成的约束会直接跑动画[UIView animateWithDuration:3 animations:^&#123; [view mas_updateConstraints:^(MASConstraintMaker *make) &#123; make.left.mas_equalTo(200); &#125;]; [view.superview layoutIfNeeded];//强制绘制&#125;];]]></content>
       <categories>
-          
-          <category> 程序 </category>
-          
-          <category> iOS </category>
-          
+        <category>程序</category>
+        <category>iOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
 </search>
