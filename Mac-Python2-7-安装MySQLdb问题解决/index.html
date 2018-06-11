@@ -96,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="Python,MySQLdb" />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -107,18 +107,18 @@
 
 
 
-<meta name="description" content="Python2.7安装MySQLdb">
-<meta name="keywords" content="Python,MySQLdb">
+<meta name="description" content="首先卸载旧版本12pip uninstall MySQL-pythonsudo pip uninstall MySQL-python 然后重新安装12brew install mysql --universalsudo pip install MySQL-python 问题错误： 解决 Reason: image not found错误 12sudo ln -s /usr/local/mysql/">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac Python2.7 安装MySQLdb问题解决">
 <meta property="og:url" content="https://blog.demonxu.com/Mac-Python2-7-安装MySQLdb问题解决/index.html">
 <meta property="og:site_name" content="听雨阁">
-<meta property="og:description" content="Python2.7安装MySQLdb">
+<meta property="og:description" content="首先卸载旧版本12pip uninstall MySQL-pythonsudo pip uninstall MySQL-python 然后重新安装12brew install mysql --universalsudo pip install MySQL-python 问题错误： 解决 Reason: image not found错误 12sudo ln -s /usr/local/mysql/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-08T10:03:36.513Z">
+<meta property="og:updated_time" content="2018-06-11T02:54:03.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Python2.7 安装MySQLdb问题解决">
-<meta name="twitter:description" content="Python2.7安装MySQLdb">
+<meta name="twitter:description" content="首先卸载旧版本12pip uninstall MySQL-pythonsudo pip uninstall MySQL-python 然后重新安装12brew install mysql --universalsudo pip install MySQL-python 问题错误： 解决 Reason: image not found错误 12sudo ln -s /usr/local/mysql/">
 
 
 
@@ -378,6 +378,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/a761552360.github.io/categories/程序/" itemprop="url" rel="index">
+                    <span itemprop="name">程序</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/a761552360.github.io/categories/程序/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -393,10 +426,6 @@
           
 
           
-              <div class="post-description">
-                  Python2.7安装MySQLdb
-              </div>
-          
 
         </div>
       </header>
@@ -411,20 +440,20 @@
       
 
       
-        <p>首先卸载旧版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall MySQL-python</span><br><span class="line">sudo pip uninstall MySQL-python</span><br></pre></td></tr></table></figure></p>
-<p>然后重新安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql --universal</span><br><span class="line">sudo pip install MySQL-python</span><br></pre></td></tr></table></figure></p>
+        <p>首先卸载旧版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall MySQL-python</span><br><span class="line">sudo pip uninstall MySQL-python</span><br></pre></td></tr></table></figure></p>
+<p>然后重新安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql --universal</span><br><span class="line">sudo pip install MySQL-python</span><br></pre></td></tr></table></figure></p>
 <h3 id="问题错误："><a href="#问题错误：" class="headerlink" title="问题错误："></a>问题错误：</h3><ul>
 <li><p>解决 <code>Reason: image not found</code>错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib/usr/lib/libmysqlclient.18.dylib</span><br><span class="line">sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/mysql/lib/libmysqlclient.18.dylib/usr/lib/libmysqlclient.18.dylib</span><br><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/mysql/lib /usr/<span class="built_in">local</span>/mysql/lib/mysql</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>pip安装时报错（注意电脑操作系统是32还是64）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PATH=&quot;/usr/local/mysql/bin:$&#123;PATH&#125;&quot;</span><br><span class="line">export PATH</span><br><span class="line">export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/</span><br><span class="line">export VERSIONER_PYTHON_PREFER_64_BIT=no</span><br><span class="line">export VERSIONER_PYTHON_PREFER_32_BIT=yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="string">"/usr/local/mysql/bin:<span class="variable">$&#123;PATH&#125;</span>"</span></span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> DYLD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/mysql/lib/</span><br><span class="line"><span class="built_in">export</span> VERSIONER_PYTHON_PREFER_64_BIT=no</span><br><span class="line"><span class="built_in">export</span> VERSIONER_PYTHON_PREFER_32_BIT=yes</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>错误</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File &quot;mysql.py&quot;, line 4, in &lt;module&gt;</span><br><span class="line">    import MySQLdb</span><br><span class="line">  File &quot;/Library/Python/2.7/site-packages/MySQLdb/__init__.py&quot;, line 19, in &lt;module&gt;</span><br><span class="line">    import _mysql</span><br><span class="line">ImportError: dlopen(/Library/Python/2.7/site-packages/_mysql.so, 2): no suitable image found.  Did find:</span><br><span class="line">/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture</span><br><span class="line">/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>解决办法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo install_name_tool -change libmysqlclient.18.dylib  /usr/local/mysql/lib/libmysqlclient.18.dylib  /Library/Python/2.7/site-packages/_mysql.so</span><br></pre></td></tr></table></figure></p>
+<p>解决办法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo install_name_tool -change libmysqlclient.18.dylib  /usr/<span class="built_in">local</span>/mysql/lib/libmysqlclient.18.dylib  /Library/Python/2.7/site-packages/_mysql.so</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -439,6 +468,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/a761552360.github.io/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
       
 
       
@@ -548,7 +583,7 @@
               
                 <a href="/a761552360.github.io/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -559,7 +594,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/a761552360.github.io/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -570,7 +605,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/a761552360.github.io/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

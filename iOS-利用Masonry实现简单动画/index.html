@@ -96,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="iOS 利用Masonry实现简单动画" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -107,18 +107,18 @@
 
 
 
-<meta name="description" content="iOS 利用Masonry实现简单动画">
-<meta name="keywords" content="iOS 利用Masonry实现简单动画">
+<meta name="description" content="和普通的方法实现差不多，重点只是修改约束后调用[view.superview layoutIfNeeded]而已123456789101112[view mas_makeConstraints:^(MASConstraintMaker *make) &amp;#123;	make.top.mas_equalTo(400);	make.left.mas_equalTo(100);	make.size.ma">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 利用Masonry实现简单动画">
 <meta property="og:url" content="https://blog.demonxu.com/iOS-利用Masonry实现简单动画/index.html">
 <meta property="og:site_name" content="听雨阁">
-<meta property="og:description" content="iOS 利用Masonry实现简单动画">
+<meta property="og:description" content="和普通的方法实现差不多，重点只是修改约束后调用[view.superview layoutIfNeeded]而已123456789101112[view mas_makeConstraints:^(MASConstraintMaker *make) &amp;#123;	make.top.mas_equalTo(400);	make.left.mas_equalTo(100);	make.size.ma">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-09T02:11:22.995Z">
+<meta property="og:updated_time" content="2018-06-11T02:54:04.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 利用Masonry实现简单动画">
-<meta name="twitter:description" content="iOS 利用Masonry实现简单动画">
+<meta name="twitter:description" content="和普通的方法实现差不多，重点只是修改约束后调用[view.superview layoutIfNeeded]而已123456789101112[view mas_makeConstraints:^(MASConstraintMaker *make) &amp;#123;	make.top.mas_equalTo(400);	make.left.mas_equalTo(100);	make.size.ma">
 
 
 
@@ -424,15 +424,7 @@
           
           
           
-		  	<div class="out-img-topic">
-		  		<img src=../img/iOS.png class="img-topic">
-		  	</div>
-		  
 
-          
-              <div class="post-description">
-                  iOS 利用Masonry实现简单动画
-              </div>
           
 
         </div>
@@ -449,7 +441,7 @@
 
       
         <ul>
-<li>和普通的方法实现差不多，重点只是修改约束后调用<code>[view.superview layoutIfNeeded]</code>而已<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[view mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">	make.top.mas_equalTo(400);</span><br><span class="line">	make.left.mas_equalTo(100);</span><br><span class="line">	make.size.mas_equalTo(CGSizeMake(100, 100));</span><br><span class="line">&#125;];</span><br><span class="line">[view.superview layoutIfNeeded];//如果其约束还没有生成的时候需要动画的话，就请先强制刷新后才写动画，否则所有没生成的约束会直接跑动画</span><br><span class="line">[UIView animateWithDuration:3 animations:^&#123;</span><br><span class="line">	[view mas_updateConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">		make.left.mas_equalTo(200);</span><br><span class="line">	&#125;];</span><br><span class="line">	[view.superview layoutIfNeeded];//强制绘制</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></li>
+<li>和普通的方法实现差不多，重点只是修改约束后调用<code>[view.superview layoutIfNeeded]</code>而已<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[view mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">	make.top.mas_equalTo(<span class="number">400</span>);</span><br><span class="line">	make.left.mas_equalTo(<span class="number">100</span>);</span><br><span class="line">	make.size.mas_equalTo(<span class="built_in">CGSizeMake</span>(<span class="number">100</span>, <span class="number">100</span>));</span><br><span class="line">&#125;];</span><br><span class="line">[view.superview layoutIfNeeded];<span class="comment">//如果其约束还没有生成的时候需要动画的话，就请先强制刷新后才写动画，否则所有没生成的约束会直接跑动画</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">3</span> animations:^&#123;</span><br><span class="line">	[view mas_updateConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">		make.left.mas_equalTo(<span class="number">200</span>);</span><br><span class="line">	&#125;];</span><br><span class="line">	[view.superview layoutIfNeeded];<span class="comment">//强制绘制</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -481,14 +473,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/a761552360.github.io/iOS-删除navigationController栈中得某一个viewController/" rel="next" title="iOS 删除navigationController栈中得某一个viewController">
+                <i class="fa fa-chevron-left"></i> iOS 删除navigationController栈中得某一个viewController
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/a761552360.github.io/iOS-复制到剪切板/" rel="prev" title="iOS 复制到剪切板">
-                iOS 复制到剪切板 <i class="fa fa-chevron-right"></i>
+              <a href="/a761552360.github.io/iOS-设置中文/" rel="prev" title="iOS-设置中文">
+                iOS-设置中文 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -567,7 +563,7 @@
               
                 <a href="/a761552360.github.io/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -578,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/a761552360.github.io/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -589,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/a761552360.github.io/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

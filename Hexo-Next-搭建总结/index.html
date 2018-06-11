@@ -96,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="Hexo-Next 搭建总结" />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -107,18 +107,18 @@
 
 
 
-<meta name="description" content="Hexo-Next 搭建总结">
-<meta name="keywords" content="Hexo-Next 搭建总结">
+<meta name="description" content="文章封面 如果想添加文章封面的话，需要添加一个字段属性：summary_img，summary_img 的值是图片的路径。 修改 \themes\next\layout\_macro\post.swing 文件。 将代码粘贴在上面123456789101112&amp;lt;! -- 添加代码 --&amp;gt;&amp;#123;% if post.summary_img  %&amp;#125;  &amp;lt;div clas">
+<meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-Next 搭建总结">
 <meta property="og:url" content="https://blog.demonxu.com/Hexo-Next-搭建总结/index.html">
 <meta property="og:site_name" content="听雨阁">
-<meta property="og:description" content="Hexo-Next 搭建总结">
+<meta property="og:description" content="文章封面 如果想添加文章封面的话，需要添加一个字段属性：summary_img，summary_img 的值是图片的路径。 修改 \themes\next\layout\_macro\post.swing 文件。 将代码粘贴在上面123456789101112&amp;lt;! -- 添加代码 --&amp;gt;&amp;#123;% if post.summary_img  %&amp;#125;  &amp;lt;div clas">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-08T14:31:26.499Z">
+<meta property="og:updated_time" content="2018-06-11T02:54:04.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Next 搭建总结">
-<meta name="twitter:description" content="Hexo-Next 搭建总结">
+<meta name="twitter:description" content="文章封面 如果想添加文章封面的话，需要添加一个字段属性：summary_img，summary_img 的值是图片的路径。 修改 \themes\next\layout\_macro\post.swing 文件。 将代码粘贴在上面123456789101112&amp;lt;! -- 添加代码 --&amp;gt;&amp;#123;% if post.summary_img  %&amp;#125;  &amp;lt;div clas">
 
 
 
@@ -424,15 +424,7 @@
           
           
           
-		  	<div class="out-img-topic">
-		  		<img src=../img/hexo.jpg class="img-topic">
-		  	</div>
-		  
 
-          
-              <div class="post-description">
-                  Hexo-Next 搭建总结
-              </div>
           
 
         </div>
@@ -451,23 +443,23 @@
         <h3 id="文章封面"><a href="#文章封面" class="headerlink" title="文章封面"></a>文章封面</h3><ul>
 <li>如果想添加文章封面的话，需要添加一个字段属性：<code>summary_img</code>，<code>summary_img</code> 的值是图片的路径。</li>
 <li>修改 <code>\themes\next\layout\_macro\post.swing</code> 文件。</li>
-<li>将代码粘贴在上面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;! -- 添加代码 --&gt;</span><br><span class="line">&#123;% if post.summary_img  %&#125;</span><br><span class="line">  &lt;div class=&quot;out-img-topic&quot;&gt;</span><br><span class="line">    &lt;img src=&#123;&#123; post.summary_img &#125;&#125; class=&quot;img-topic&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&lt;! -- 结束 --&gt;</span><br><span class="line">&#123;% if post.description and (not theme.excerpt_description or not is_index) %&#125;</span><br><span class="line">    &lt;div class=&quot;post-description&quot;&gt;</span><br><span class="line">       &#123;&#123; post.description &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<li>将代码粘贴在上面<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">!</span> <span class="attr">--</span> 添加代码 <span class="attr">--</span>&gt;</span></span><br><span class="line">&#123;% if post.summary_img  %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"out-img-topic"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;&#123;</span> <span class="attr">post.summary_img</span> &#125;&#125; <span class="attr">class</span>=<span class="string">"img-topic"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">!</span> <span class="attr">--</span> 结束 <span class="attr">--</span>&gt;</span></span><br><span class="line">&#123;% if post.description and (not theme.excerpt_description or not is_index) %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-description"</span>&gt;</span></span><br><span class="line">       &#123;&#123; post.description &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="网页加载进度条"><a href="#网页加载进度条" class="headerlink" title="网页加载进度条"></a>网页加载进度条</h3><ul>
 <li><p>打开 <code>/themes/next/layout/_partials/head.swing</code> 文件，在文件末尾添加如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 网页加载条 --&gt;</span><br><span class="line">&lt;script src=&quot;https://neveryu.github.io/js/src/pace.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 网页加载条 --&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://neveryu.github.io/js/src/pace.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后，打开 <code>/themes/source/css/_custom/custom.styl</code> 文件，在文件末尾添加如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">/*网页加载条*/</span><br><span class="line">/* This is a compiled file, you should be editing the file in the templates directory */</span><br><span class="line">.pace &#123;</span><br><span class="line">  -webkit-pointer-events: none;</span><br><span class="line">  pointer-events: none;</span><br><span class="line">  -webkit-user-select: none;</span><br><span class="line">  -moz-user-select: none;</span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace-inactive &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace .pace-progress &#123;</span><br><span class="line">  background: #1e92fb;</span><br><span class="line">  position: fixed;</span><br><span class="line">  z-index: 2000;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 100%;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 3px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace .pace-progress-inner &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 0px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100%;</span><br><span class="line">  box-shadow: 0 0 10px #e90f92, 0 0 5px #e90f92;</span><br><span class="line">  opacity: 1.0;</span><br><span class="line">  -webkit-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  -moz-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  -ms-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  -o-transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">  transform: rotate(3deg) translate(0px, -4px);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pace .pace-activity &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  position: fixed;</span><br><span class="line">  z-index: 2000;</span><br><span class="line">  top: 15px;</span><br><span class="line">  right: 15px;</span><br><span class="line">  width: 14px;</span><br><span class="line">  height: 14px;</span><br><span class="line">  border: solid 2px transparent;</span><br><span class="line">  border-top-color: #e90f92;</span><br><span class="line">  border-left-color: #e90f92;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">  -webkit-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  -moz-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  -ms-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  -o-animation: pace-spinner 400ms linear infinite;</span><br><span class="line">  animation: pace-spinner 400ms linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -webkit-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -webkit-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -moz-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -moz-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -o-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -o-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-ms-keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; -ms-transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; -ms-transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes pace-spinner &#123;</span><br><span class="line">  0% &#123; transform: rotate(0deg); transform: rotate(0deg); &#125;</span><br><span class="line">  100% &#123; transform: rotate(360deg); transform: rotate(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*网页加载条 END*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*网页加载条*/</span></span><br><span class="line"><span class="comment">/* This is a compiled file, you should be editing the file in the templates directory */</span></span><br><span class="line"><span class="selector-class">.pace</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-pointer-events</span>: none;</span><br><span class="line">  <span class="attribute">pointer-events</span>: none;</span><br><span class="line">  <span class="attribute">-webkit-user-select</span>: none;</span><br><span class="line">  <span class="attribute">-moz-user-select</span>: none;</span><br><span class="line">  <span class="attribute">user-select</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pace-inactive</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pace</span> <span class="selector-class">.pace-progress</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#1e92fb</span>;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">2000</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pace</span> <span class="selector-class">.pace-progress-inner</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">#e90f92</span>, <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">#e90f92</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1.0</span>;</span><br><span class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(3deg) <span class="built_in">translate</span>(0px, -4px);</span><br><span class="line">  <span class="attribute">-moz-transform</span>: <span class="built_in">rotate</span>(3deg) <span class="built_in">translate</span>(0px, -4px);</span><br><span class="line">  <span class="attribute">-ms-transform</span>: <span class="built_in">rotate</span>(3deg) <span class="built_in">translate</span>(0px, -4px);</span><br><span class="line">  <span class="attribute">-o-transform</span>: <span class="built_in">rotate</span>(3deg) <span class="built_in">translate</span>(0px, -4px);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(3deg) <span class="built_in">translate</span>(0px, -4px);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pace</span> <span class="selector-class">.pace-activity</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">2000</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">border</span>: solid <span class="number">2px</span> transparent;</span><br><span class="line">  <span class="attribute">border-top-color</span>: <span class="number">#e90f92</span>;</span><br><span class="line">  <span class="attribute">border-left-color</span>: <span class="number">#e90f92</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>: pace-spinner <span class="number">400ms</span> linear infinite;</span><br><span class="line">  <span class="attribute">-moz-animation</span>: pace-spinner <span class="number">400ms</span> linear infinite;</span><br><span class="line">  <span class="attribute">-ms-animation</span>: pace-spinner <span class="number">400ms</span> linear infinite;</span><br><span class="line">  <span class="attribute">-o-animation</span>: pace-spinner <span class="number">400ms</span> linear infinite;</span><br><span class="line">  <span class="attribute">animation</span>: pace-spinner <span class="number">400ms</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> pace-spinner &#123;</span><br><span class="line">  0% &#123; <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(0deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg); &#125;</span><br><span class="line">  100% &#123; <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(360deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> pace-spinner &#123;</span><br><span class="line">  0% &#123; <span class="attribute">-moz-transform</span>: <span class="built_in">rotate</span>(0deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg); &#125;</span><br><span class="line">  100% &#123; <span class="attribute">-moz-transform</span>: <span class="built_in">rotate</span>(360deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-<span class="keyword">o</span>-<span class="keyword">keyframes</span> pace-spinner &#123;</span><br><span class="line">  0% &#123; <span class="attribute">-o-transform</span>: <span class="built_in">rotate</span>(0deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg); &#125;</span><br><span class="line">  100% &#123; <span class="attribute">-o-transform</span>: <span class="built_in">rotate</span>(360deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> pace-spinner &#123;</span><br><span class="line">  0% &#123; <span class="attribute">-ms-transform</span>: <span class="built_in">rotate</span>(0deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg); &#125;</span><br><span class="line">  100% &#123; <span class="attribute">-ms-transform</span>: <span class="built_in">rotate</span>(360deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> pace-spinner &#123;</span><br><span class="line">  0% &#123; <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg); &#125;</span><br><span class="line">  100% &#123; <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg); <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*网页加载条 END*/</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="修改文章内链接样式"><a href="#修改文章内链接样式" class="headerlink" title="修改文章内链接样式"></a>修改文章内链接样式</h3><ul>
 <li><p>在主题配置文件<code>theme/next/_config.yml</code>，新增配置项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">custom_css:</span><br><span class="line">  # the style of post body link</span><br><span class="line">  post_body_a:</span><br><span class="line">    enable: true</span><br><span class="line">    normal_color: &quot;#0593d3&quot;</span><br><span class="line">    hover_color: &quot;#0477ab&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">custom_css</span>:</span><br><span class="line">  # <span class="selector-tag">the</span> <span class="selector-tag">style</span> <span class="selector-tag">of</span> <span class="selector-tag">post</span> <span class="selector-tag">body</span> <span class="selector-tag">link</span></span><br><span class="line">  <span class="selector-tag">post_body_a</span>:</span><br><span class="line">    <span class="selector-tag">enable</span>: <span class="selector-tag">true</span></span><br><span class="line">    <span class="selector-tag">normal_color</span>: "<span class="selector-id">#0593d3</span>"</span><br><span class="line">    <span class="selector-tag">hover_color</span>: "<span class="selector-id">#0477ab</span>"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>next主题提供了用户自定义样式的扩展功能，我们只需要在<code>theme/next/source/css/_custom/custom.styl</code>里添加样式就可以新增或覆盖原来的样式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// custom.styl</span><br><span class="line">if hexo-config(&quot;custom_css.post_body_a.enable&quot;)</span><br><span class="line">  .post-body</span><br><span class="line">    a&#123;</span><br><span class="line">      color: convert(hexo-config(&quot;custom_css.post_body_a.normal_color&quot;));</span><br><span class="line">      border-bottom: none;</span><br><span class="line">      &amp;:hover &#123;</span><br><span class="line">        color: convert(hexo-config(&quot;custom_css.post_body_a.hover_color&quot;));</span><br><span class="line">        text-decoration: underline;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// custom.styl</span><br><span class="line"><span class="selector-tag">if</span> <span class="selector-tag">hexo-config</span>("<span class="selector-tag">custom_css</span><span class="selector-class">.post_body_a</span><span class="selector-class">.enable</span>")</span><br><span class="line">  <span class="selector-class">.post-body</span></span><br><span class="line">    <span class="selector-tag">a</span>&#123;</span><br><span class="line">      <span class="attribute">color</span>: <span class="built_in">convert</span>(hexo-config(<span class="string">"custom_css.post_body_a.normal_color"</span>));</span><br><span class="line">      <span class="attribute">border-bottom</span>: none;</span><br><span class="line">      &amp;:hover &#123;</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-tag">convert</span>(<span class="selector-tag">hexo-config</span>("<span class="selector-tag">custom_css</span><span class="selector-class">.post_body_a</span><span class="selector-class">.hover_color</span>"));</span><br><span class="line">        <span class="selector-tag">text-decoration</span>: <span class="selector-tag">underline</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>这里，我们用了hexo-config()函数读取配置，用stylus的内建函数convert()转换成stylus需要的颜色格式。这个方法最大的优点就是可配置，也支持随时还原成原来主题的格式。</p>
 </li>
@@ -482,13 +474,139 @@
 <li>具体实现方法:修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></li>
 </ul>
 <h3 id="主页文章添加阴影效果"><a href="#主页文章添加阴影效果" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h3><ul>
-<li>打开<code>\themes\next\source\css\_custom\custom.styl</code>,向里面加入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"> .post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<li>打开<code>\themes\next\source\css\_custom\custom.styl</code>,向里面加入：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"> <span class="selector-class">.post</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">25px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(202, 203, 203, .5);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="自定义鼠标样式"><a href="#自定义鼠标样式" class="headerlink" title="自定义鼠标样式"></a>自定义鼠标样式</h3><ul>
-<li>打开<code>themes/next/source/css/_custom/custom.styl</code>,在里面写下如下代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 鼠标样式</span><br><span class="line">  * &#123;</span><br><span class="line">      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;),auto!important</span><br><span class="line">  &#125;</span><br><span class="line">  :active &#123;</span><br><span class="line">      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;),auto!important</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<li>打开<code>themes/next/source/css/_custom/custom.styl</code>,在里面写下如下代码<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 鼠标样式</span><br><span class="line">  * &#123;</span><br><span class="line">      <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">"http://om8u46rmb.bkt.clouddn.com/sword2.ico"</span>),auto<span class="meta">!important</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">      <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">"http://om8u46rmb.bkt.clouddn.com/sword1.ico"</span>),auto<span class="meta">!important</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="代码高亮支持语言"><a href="#代码高亮支持语言" class="headerlink" title="代码高亮支持语言"></a>代码高亮支持语言</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AppleScript</td>
+<td style="text-align:center">applescript</td>
+</tr>
+<tr>
+<td style="text-align:center">ActionScript 3.0</td>
+<td style="text-align:center">actionscript3 , as3</td>
+</tr>
+<tr>
+<td style="text-align:center">Shell</td>
+<td style="text-align:center">bash , shell</td>
+</tr>
+<tr>
+<td style="text-align:center">ColdFusion</td>
+<td style="text-align:center">coldfusion , cf</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">cpp , c</td>
+</tr>
+<tr>
+<td style="text-align:center">C#</td>
+<td style="text-align:center">c# , c-sharp , csharp</td>
+</tr>
+<tr>
+<td style="text-align:center">CSS</td>
+<td style="text-align:center">css</td>
+</tr>
+<tr>
+<td style="text-align:center">Delphi</td>
+<td style="text-align:center">delphi , pascal , pas</td>
+</tr>
+<tr>
+<td style="text-align:center">diff&amp;patch</td>
+<td style="text-align:center">diff patch</td>
+</tr>
+<tr>
+<td style="text-align:center">Erlang</td>
+<td style="text-align:center">erl , erlang</td>
+</tr>
+<tr>
+<td style="text-align:center">Groovy</td>
+<td style="text-align:center">groovy</td>
+</tr>
+<tr>
+<td style="text-align:center">Java</td>
+<td style="text-align:center">java</td>
+</tr>
+<tr>
+<td style="text-align:center">JavaFX</td>
+<td style="text-align:center">jfx , javafx</td>
+</tr>
+<tr>
+<td style="text-align:center">JavaScript</td>
+<td style="text-align:center">js , jscript , javascript</td>
+</tr>
+<tr>
+<td style="text-align:center">Perl</td>
+<td style="text-align:center">perl , pl , Perl</td>
+</tr>
+<tr>
+<td style="text-align:center">PHP</td>
+<td style="text-align:center">php</td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">text , plain</td>
+</tr>
+<tr>
+<td style="text-align:center">Python</td>
+<td style="text-align:center">py , python</td>
+</tr>
+<tr>
+<td style="text-align:center">Ruby</td>
+<td style="text-align:center">ruby , rails , ror , rb</td>
+</tr>
+<tr>
+<td style="text-align:center">SASS&amp;SCSS</td>
+<td style="text-align:center">sass , scss</td>
+</tr>
+<tr>
+<td style="text-align:center">Scala</td>
+<td style="text-align:center">scala</td>
+</tr>
+<tr>
+<td style="text-align:center">SQL</td>
+<td style="text-align:center">sql</td>
+</tr>
+<tr>
+<td style="text-align:center">Visual Basic</td>
+<td style="text-align:center">vb , vbnet</td>
+</tr>
+<tr>
+<td style="text-align:center">XML</td>
+<td style="text-align:center">xml , xhtml , xslt , html</td>
+</tr>
+<tr>
+<td style="text-align:center">Objective C</td>
+<td style="text-align:center">objc , obj-c</td>
+</tr>
+<tr>
+<td style="text-align:center">F#</td>
+<td style="text-align:center">f# f-sharp , fsharp</td>
+</tr>
+<tr>
+<td style="text-align:center">swift</td>
+<td style="text-align:center">swift</td>
+</tr>
+<tr>
+<td style="text-align:center">GO</td>
+<td style="text-align:center">go , golang</td>
+</tr>
+<tr>
+<td style="text-align:center">matlab</td>
+<td style="text-align:center">matlab</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -519,8 +637,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/a761552360.github.io/阿里云ECS-搭建Shadowsocks/" rel="next" title="阿里云ECS 搭建Shadowsocks">
-                <i class="fa fa-chevron-left"></i> 阿里云ECS 搭建Shadowsocks
+              <a href="/a761552360.github.io/Mac快捷键/" rel="next" title="Mac快捷键">
+                <i class="fa fa-chevron-left"></i> Mac快捷键
               </a>
             
           </div>
@@ -528,10 +646,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/a761552360.github.io/iOS-保存图片到相册/" rel="prev" title="iOS 保存图片到相册">
-                iOS 保存图片到相册 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -618,7 +732,7 @@
               
                 <a href="/a761552360.github.io/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +743,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/a761552360.github.io/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -640,7 +754,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/a761552360.github.io/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -720,7 +834,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章封面"><span class="nav-number">1.</span> <span class="nav-text">文章封面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页加载进度条"><span class="nav-number">2.</span> <span class="nav-text">网页加载进度条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章内链接样式"><span class="nav-number">3.</span> <span class="nav-text">修改文章内链接样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景透明"><span class="nav-number">4.</span> <span class="nav-text">背景透明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮背景"><span class="nav-number">5.</span> <span class="nav-text">按钮背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点概况背景"><span class="nav-number">6.</span> <span class="nav-text">站点概况背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单栏背景"><span class="nav-number">7.</span> <span class="nav-text">菜单栏背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章底部的那个带-号的标签"><span class="nav-number">8.</span> <span class="nav-text">修改文章底部的那个带#号的标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主页文章添加阴影效果"><span class="nav-number">9.</span> <span class="nav-text">主页文章添加阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">10.</span> <span class="nav-text">自定义鼠标样式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章封面"><span class="nav-number">1.</span> <span class="nav-text">文章封面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页加载进度条"><span class="nav-number">2.</span> <span class="nav-text">网页加载进度条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章内链接样式"><span class="nav-number">3.</span> <span class="nav-text">修改文章内链接样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景透明"><span class="nav-number">4.</span> <span class="nav-text">背景透明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮背景"><span class="nav-number">5.</span> <span class="nav-text">按钮背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点概况背景"><span class="nav-number">6.</span> <span class="nav-text">站点概况背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单栏背景"><span class="nav-number">7.</span> <span class="nav-text">菜单栏背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章底部的那个带-号的标签"><span class="nav-number">8.</span> <span class="nav-text">修改文章底部的那个带#号的标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主页文章添加阴影效果"><span class="nav-number">9.</span> <span class="nav-text">主页文章添加阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">10.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码高亮支持语言"><span class="nav-number">11.</span> <span class="nav-text">代码高亮支持语言</span></a></li></ol></div>
             
 
           </div>

@@ -1,38 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[iOS 保存图片到相册]]></title>
-    <url>%2Fa761552360.github.io%2FiOS-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%88%B0%E7%9B%B8%E5%86%8C%2F</url>
-    <content type="text"><![CDATA[12345678//画图+ (UIImage *)snapshot:(UIView *)view size:(CGSize )size&#123; UIGraphicsBeginImageContextWithOptions(size,YES,0); [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES]; UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext(); return image;&#125; 1234//保存- (void)saveImageToPhotos:(UIImage*)savedImage &#123; UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);&#125; 12345678910- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo &#123; NSString *msg = nil ; if(error != NULL)&#123; msg = @&quot;保存图片失败&quot; ; &#125;else&#123; msg = @&quot;保存图片成功&quot; ; &#125; UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;保存图片结果提示&quot; message:msg delegate:self cancelButtonTitle:@&quot;确定&quot; otherButtonTitles:nil]; [alert show];&#125;]]></content>
-      <categories>
-        <category>程序</category>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo-Next 搭建总结]]></title>
     <url>%2Fa761552360.github.io%2FHexo-Next-%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[文章封面 如果想添加文章封面的话，需要添加一个字段属性：summary_img，summary_img 的值是图片的路径。 修改 \themes\next\layout\_macro\post.swing 文件。 将代码粘贴在上面123456789101112&lt;! -- 添加代码 --&gt;&#123;% if post.summary_img %&#125; &lt;div class=&quot;out-img-topic&quot;&gt; &lt;img src=&#123;&#123; post.summary_img &#125;&#125; class=&quot;img-topic&quot;&gt; &lt;/div&gt;&#123;% endif %&#125;&lt;! -- 结束 --&gt;&#123;% if post.description and (not theme.excerpt_description or not is_index) %&#125; &lt;div class=&quot;post-description&quot;&gt; &#123;&#123; post.description &#125;&#125; &lt;/div&gt;&#123;% endif %&#125; 网页加载进度条 打开 /themes/next/layout/_partials/head.swing 文件，在文件末尾添加如下代码： 12&lt;!-- 网页加载条 --&gt;&lt;script src=&quot;https://neveryu.github.io/js/src/pace.min.js&quot;&gt;&lt;/script&gt; 然后，打开 /themes/source/css/_custom/custom.styl 文件，在文件末尾添加如下代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/*网页加载条*//* This is a compiled file, you should be editing the file in the templates directory */.pace &#123; -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none;&#125;.pace-inactive &#123; display: none;&#125;.pace .pace-progress &#123; background: #1e92fb; position: fixed; z-index: 2000; top: 0; right: 100%; width: 100%; height: 3px;&#125;.pace .pace-progress-inner &#123; display: block; position: absolute; right: 0px; width: 100px; height: 100%; box-shadow: 0 0 10px #e90f92, 0 0 5px #e90f92; opacity: 1.0; -webkit-transform: rotate(3deg) translate(0px, -4px); -moz-transform: rotate(3deg) translate(0px, -4px); -ms-transform: rotate(3deg) translate(0px, -4px); -o-transform: rotate(3deg) translate(0px, -4px); transform: rotate(3deg) translate(0px, -4px);&#125;.pace .pace-activity &#123; display: block; position: fixed; z-index: 2000; top: 15px; right: 15px; width: 14px; height: 14px; border: solid 2px transparent; border-top-color: #e90f92; border-left-color: #e90f92; border-radius: 10px; -webkit-animation: pace-spinner 400ms linear infinite; -moz-animation: pace-spinner 400ms linear infinite; -ms-animation: pace-spinner 400ms linear infinite; -o-animation: pace-spinner 400ms linear infinite; animation: pace-spinner 400ms linear infinite;&#125;@-webkit-keyframes pace-spinner &#123; 0% &#123; -webkit-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -webkit-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-moz-keyframes pace-spinner &#123; 0% &#123; -moz-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -moz-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-o-keyframes pace-spinner &#123; 0% &#123; -o-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -o-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-ms-keyframes pace-spinner &#123; 0% &#123; -ms-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -ms-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@keyframes pace-spinner &#123; 0% &#123; transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;/*网页加载条 END*/ 修改文章内链接样式 在主题配置文件theme/next/_config.yml，新增配置项： 123456custom_css: # the style of post body link post_body_a: enable: true normal_color: &quot;#0593d3&quot; hover_color: &quot;#0477ab&quot; next主题提供了用户自定义样式的扩展功能，我们只需要在theme/next/source/css/_custom/custom.styl里添加样式就可以新增或覆盖原来的样式。 1234567891011// custom.stylif hexo-config(&quot;custom_css.post_body_a.enable&quot;) .post-body a&#123; color: convert(hexo-config(&quot;custom_css.post_body_a.normal_color&quot;)); border-bottom: none; &amp;:hover &#123; color: convert(hexo-config(&quot;custom_css.post_body_a.hover_color&quot;)); text-decoration: underline; &#125; &#125; 这里，我们用了hexo-config()函数读取配置，用stylus的内建函数convert()转换成stylus需要的颜色格式。这个方法最大的优点就是可配置，也支持随时还原成原来主题的格式。 背景透明 博客根目录 themes\next\source\css\_schemes\Pisces\_layout.styl这个文件的第65行background:删除掉按钮背景 博客根目录 themes\next\source\css\_common\components\post\post-button.styl 第七行修改成background: transparent;站点概况背景 博客根目录 themes\next\source\css\_schemes\Pisces\_sidebar.styl 18行删除菜单栏背景 next\source\css\_schemes\Pisces\_layout.styl 文件里.header-inner 这个选择器下的background 就是背景色 修改文章底部的那个带#号的标签 具体实现方法:修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&quot;tag&quot;&gt;#，将 # 换成&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt; 主页文章添加阴影效果 打开\themes\next\source\css\_custom\custom.styl,向里面加入：12345678// 主页文章添加阴影效果 .post &#123; margin-top: 60px; margin-bottom: 60px; padding: 25px; -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5); -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5); &#125; 自定义鼠标样式 打开themes/next/source/css/_custom/custom.styl,在里面写下如下代码1234567// 鼠标样式 * &#123; cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;),auto!important &#125; :active &#123; cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;),auto!important &#125;]]></content>
+    <content type="text"><![CDATA[文章封面 如果想添加文章封面的话，需要添加一个字段属性：summary_img，summary_img 的值是图片的路径。 修改 \themes\next\layout\_macro\post.swing 文件。 将代码粘贴在上面123456789101112&lt;! -- 添加代码 --&gt;&#123;% if post.summary_img %&#125; &lt;div class="out-img-topic"&gt; &lt;img src=&#123;&#123; post.summary_img &#125;&#125; class="img-topic"&gt; &lt;/div&gt;&#123;% endif %&#125;&lt;! -- 结束 --&gt;&#123;% if post.description and (not theme.excerpt_description or not is_index) %&#125; &lt;div class="post-description"&gt; &#123;&#123; post.description &#125;&#125; &lt;/div&gt;&#123;% endif %&#125; 网页加载进度条 打开 /themes/next/layout/_partials/head.swing 文件，在文件末尾添加如下代码： 12&lt;!-- 网页加载条 --&gt;&lt;script src="https://neveryu.github.io/js/src/pace.min.js"&gt;&lt;/script&gt; 然后，打开 /themes/source/css/_custom/custom.styl 文件，在文件末尾添加如下代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/*网页加载条*//* This is a compiled file, you should be editing the file in the templates directory */.pace &#123; -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none;&#125;.pace-inactive &#123; display: none;&#125;.pace .pace-progress &#123; background: #1e92fb; position: fixed; z-index: 2000; top: 0; right: 100%; width: 100%; height: 3px;&#125;.pace .pace-progress-inner &#123; display: block; position: absolute; right: 0px; width: 100px; height: 100%; box-shadow: 0 0 10px #e90f92, 0 0 5px #e90f92; opacity: 1.0; -webkit-transform: rotate(3deg) translate(0px, -4px); -moz-transform: rotate(3deg) translate(0px, -4px); -ms-transform: rotate(3deg) translate(0px, -4px); -o-transform: rotate(3deg) translate(0px, -4px); transform: rotate(3deg) translate(0px, -4px);&#125;.pace .pace-activity &#123; display: block; position: fixed; z-index: 2000; top: 15px; right: 15px; width: 14px; height: 14px; border: solid 2px transparent; border-top-color: #e90f92; border-left-color: #e90f92; border-radius: 10px; -webkit-animation: pace-spinner 400ms linear infinite; -moz-animation: pace-spinner 400ms linear infinite; -ms-animation: pace-spinner 400ms linear infinite; -o-animation: pace-spinner 400ms linear infinite; animation: pace-spinner 400ms linear infinite;&#125;@-webkit-keyframes pace-spinner &#123; 0% &#123; -webkit-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -webkit-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-moz-keyframes pace-spinner &#123; 0% &#123; -moz-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -moz-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-o-keyframes pace-spinner &#123; 0% &#123; -o-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -o-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@-ms-keyframes pace-spinner &#123; 0% &#123; -ms-transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; -ms-transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;@keyframes pace-spinner &#123; 0% &#123; transform: rotate(0deg); transform: rotate(0deg); &#125; 100% &#123; transform: rotate(360deg); transform: rotate(360deg); &#125;&#125;/*网页加载条 END*/ 修改文章内链接样式 在主题配置文件theme/next/_config.yml，新增配置项： 123456custom_css: # the style of post body link post_body_a: enable: true normal_color: "#0593d3" hover_color: "#0477ab" next主题提供了用户自定义样式的扩展功能，我们只需要在theme/next/source/css/_custom/custom.styl里添加样式就可以新增或覆盖原来的样式。 1234567891011// custom.stylif hexo-config("custom_css.post_body_a.enable") .post-body a&#123; color: convert(hexo-config("custom_css.post_body_a.normal_color")); border-bottom: none; &amp;:hover &#123; color: convert(hexo-config("custom_css.post_body_a.hover_color")); text-decoration: underline; &#125; &#125; 这里，我们用了hexo-config()函数读取配置，用stylus的内建函数convert()转换成stylus需要的颜色格式。这个方法最大的优点就是可配置，也支持随时还原成原来主题的格式。 背景透明 博客根目录 themes\next\source\css\_schemes\Pisces\_layout.styl这个文件的第65行background:删除掉按钮背景 博客根目录 themes\next\source\css\_common\components\post\post-button.styl 第七行修改成background: transparent;站点概况背景 博客根目录 themes\next\source\css\_schemes\Pisces\_sidebar.styl 18行删除菜单栏背景 next\source\css\_schemes\Pisces\_layout.styl 文件里.header-inner 这个选择器下的background 就是背景色 修改文章底部的那个带#号的标签 具体实现方法:修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&quot;tag&quot;&gt;#，将 # 换成&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt; 主页文章添加阴影效果 打开\themes\next\source\css\_custom\custom.styl,向里面加入：12345678// 主页文章添加阴影效果 .post &#123; margin-top: 60px; margin-bottom: 60px; padding: 25px; -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5); -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5); &#125; 自定义鼠标样式 打开themes/next/source/css/_custom/custom.styl,在里面写下如下代码1234567// 鼠标样式 * &#123; cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"),auto!important &#125; :active &#123; cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"),auto!important &#125; 代码高亮支持语言 名称 关键字 AppleScript applescript ActionScript 3.0 actionscript3 , as3 Shell bash , shell ColdFusion coldfusion , cf C cpp , c C# c# , c-sharp , csharp CSS css Delphi delphi , pascal , pas diff&amp;patch diff patch Erlang erl , erlang Groovy groovy Java java JavaFX jfx , javafx JavaScript js , jscript , javascript Perl perl , pl , Perl PHP php text text , plain Python py , python Ruby ruby , rails , ror , rb SASS&amp;SCSS sass , scss Scala scala SQL sql Visual Basic vb , vbnet XML xml , xhtml , xslt , html Objective C objc , obj-c F# f# f-sharp , fsharp swift swift GO go , golang matlab matlab]]></content>
       <categories>
         <category>程序</category>
         <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[阿里云ECS 搭建Shadowsocks]]></title>
-    <url>%2Fa761552360.github.io%2F%E9%98%BF%E9%87%8C%E4%BA%91ECS-%E6%90%AD%E5%BB%BAShadowsocks%2F</url>
-    <content type="text"><![CDATA[安装shadowsocks(系统为CentOS7)在命令行依次输入123wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.shchmod +x shadowsocks.sh./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log 然后服务器配置完成shadowsocks配置文件在/etc/shadowsock.json如果需要配置多端口1234567891011121314&#123; &quot;server&quot;:&quot;my_server_ip&quot;， &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;port_password&quot;: &#123; &quot;8381&quot;: &quot;foobar1&quot;, &quot;8382&quot;: &quot;foobar2&quot;, &quot;8383&quot;: &quot;foobar3&quot;, &quot;8384&quot;: &quot;foobar4&quot; &#125;, &quot;timeout&quot;:300, &quot;method&quot;:&quot;aes-256-cfb&quot;, &quot;fast_open&quot;: false&#125; 然后需要重启shadowsockshadowsock命令如下1234启动：systemctl start shadowsocks.service停止：systemctl stop shadowsocks.service重启：systemctl restart shadowsocks.service状态：systemctl status shadowsocks.service CentOS7下需要开启端口开启端口firewall-cmd –zone=public –add-port=&lt;端口号&gt;/tcp –permanent例如firewall-cmd --zone=public --add-port=80/tcp --permanent重启防火墙firewall-cmd --reload最后在登录阿里云网站管理ECS添加规则最后需要重启服务器后规则才能生效reboot Shadowsocks 客户端下载 iPhone FirstWingy Windows shadowsocks 或者百度云链接 密码:t3t5 Mac shadowsocks-NG 或者 百度云链接 密码: br8d Andriod 百度云链接 密码: ev8f 使用KCPTun加速Shadowsocks(个人测试阿里云ECS无法使用，可在其他VPS上使用,vultr 测试可使用)KCPTun服务安装123456// 下载脚本wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh// 赋予权限chmod +x ./kcptun.sh// 执行脚本./kcptun.sh]]></content>
-      <categories>
-        <category>Centos</category>
-      </categories>
-      <tags>
-        <tag>科学上网</tag>
       </tags>
   </entry>
   <entry>
@@ -47,30 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[iOS7获取Mac地址]]></title>
-    <url>%2Fa761552360.github.io%2FiOS7%E8%8E%B7%E5%8F%96Mac%E5%9C%B0%E5%9D%80%2F</url>
-    <content type="text"><![CDATA[1234567891011121314#import &lt;NetworkExtension/NetworkExtension.h&gt;#import &lt;SystemConfiguration/CaptiveNetwork.h&gt;- (NSString *)getMacAddress &#123; NSArray *array = CFBridgingRelease(CNCopySupportedInterfaces()); NSDictionary *info = nil; for (NSString *interface in array) &#123; info = CFBridgingRelease(CNCopyCurrentNetworkInfo((CFStringRef)interface)); if (info &amp;&amp;[info count]) &#123; break; &#125; &#125; return info[@&quot;BSSID&quot;];&#125;]]></content>
-      <categories>
-        <category>程序</category>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[iOS 获取导航高度]]></title>
-    <url>%2Fa761552360.github.io%2FiOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6%2F</url>
-    <content type="text"><![CDATA[123456789// 状态栏(statusbar)CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame]; NSLog(@&quot;status width - %f&quot;, rectStatus.size.width); // 宽度 NSLog(@&quot;status height - %f&quot;, rectStatus.size.height); // 高度 // 导航栏（navigationbar） CGRect rectNav = self.navigationController.navigationBar.frame; NSLog(@&quot;nav width - %f&quot;, rectNav.size.width); // 宽度 NSLog(@&quot;nav height - %f&quot;, rectNav.size.height); // 高度]]></content>
-      <categories>
-        <category>程序</category>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[素笺心语]]></title>
     <url>%2Fa761552360.github.io%2F%E7%B4%A0%E7%AC%BA%E5%BF%83%E8%AF%AD%2F</url>
     <content type="text"><![CDATA[午夜，梦醒，辗转，无眠。散养的小字依然没有排列成序，在一朵月光中漂泊流浪。我在一隅安寂里，任心泛起层层涟漪。 无声的岁月，无奈的叹息，回首，我有昨天不可忆。忧伤和欢喜的交织的日子，在暮鼓晨钟里低吟浅唱。花开花谢，月圆月缺，总是在时序里更迭，散落于岁月山河。 不是，每个人的生活都事事如意；不是，所有的花开都有结果；不是，付出就一定有收获。光阴的故事里，一味烟火平覆了许多影影绰绰，打磨着记忆里的陈词旧歌。用一杯茶的清香忆一朵往事的悠扬，一米阳光在一朵清露上歌唱。如是，无需轻言遗憾，不叹，云烟迷蒙了最美的华年。只依着光阴的脉络，循着时序有节，持一束柔软默默向前。 如若，情思不是一页脆薄的纸，就不会有现在逶迤的心路；如若，忧伤，还在心底幽居，柔肠百转又返回了最初，深种的执意半途而去。浮生，一世，走不出故事里的故事。依依，是流年暗生的情愫。 习惯了，取一朵往事填充空白的时光，不去想，诗和远方在路上还有多远多长。那一场遇见，一场离散，在光阴的痕上细说人生悲欢。落花的窗前，细雨染流年。深情的眸底，我以一眉清喜悦纳人生变幻。散笺一行小字，将琐琐碎碎的日子素描成一段心曲，仿佛总是找不出完美的主题。曾经的每一个交集深深隐于光阴的痕迹，近在咫尺，又恍如隔世。 素来，与众生有疏离。是是非非绕于一身，不如寻一方静谧，让檐下听雨，月下听风的温馨美丽，来诗意一程平凡的人生路。如若，灵魂里植一朵素洁的茉莉，何忧不心香四溢，清净自喜？轻挽一朵淡定从容，深种一眉波澜不惊，妥帖我的烟火人生。如若还有雨丝幽居在心里，也只是，我还在想着你… 总想，即使这素素的红尘落满忧伤，亦可以持一朵清雅的墨香行于阡陌之上。诗和远方在前行的路上旖旎而又馨香。心有柔软，而大片大片的清高又存放于血脉之中。红尘中的万水千山，任你我再相见，我心再无波澜。轻拢一阕删繁从简，度我的现世安暖。浓浓淡淡，相携相牵的岁月，相宜静好。就如，你我，相念又相安。 淡而静的日子，我将时光斟满杯盏。漫漫人生，岁月长河，我们能做到的也不可能是，将初初一见的美好润泽成一片秋水长天。花好万般与无法如愿总是痴缠交挽，又相互摩擦。你的美，一缕飘向，去到了我去不了的地方。捧一盏静好的光阴，缓缓氲开，所有的思绪都交给了一场最美的相遇。我在一朵似曾相识里寂静欢喜，指尖轻捻的诗句，一直为你悄悄落笔。 红尘路，我曾用心种下一枚期许，一生一世，铺满我所有的流年记忆。时光匆匆，逶迤的年轮划过半圈，一如某一份人生，半生烟雨在心灵里飘浮，洇湿脚下的路。日月山河，走旧的是光阴，走不老的永远是心情，一路忘记，又一路萌发。 永远安静，是我想要的人生。我在无人欣赏的角落，开着自己喜欢的样子。而来时路，明日风，又总在一份静谧里如潮水汹涌而至，淹没我落花般的思绪……]]></content>
@@ -79,6 +32,76 @@
       </categories>
       <tags>
         <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 获取导航高度]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E8%8E%B7%E5%8F%96%E5%AF%BC%E8%88%AA%E9%AB%98%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[123456789// 状态栏(statusbar)CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame]; NSLog(@"status width - %f", rectStatus.size.width); // 宽度 NSLog(@"status height - %f", rectStatus.size.height); // 高度 // 导航栏（navigationbar） CGRect rectNav = self.navigationController.navigationBar.frame; NSLog(@"nav width - %f", rectNav.size.width); // 宽度 NSLog(@"nav height - %f", rectNav.size.height); // 高度]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[阿里云ECS 搭建Shadowsocks]]></title>
+    <url>%2Fa761552360.github.io%2F%E9%98%BF%E9%87%8C%E4%BA%91ECS-%E6%90%AD%E5%BB%BAShadowsocks%2F</url>
+    <content type="text"><![CDATA[安装shadowsocks(系统为CentOS7)在命令行依次输入123wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.shchmod +x shadowsocks.sh./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log 然后服务器配置完成shadowsocks配置文件在/etc/shadowsock.json如果需要配置多端口1234567891011121314&#123; &quot;server&quot;:&quot;my_server_ip&quot;， &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;port_password&quot;: &#123; &quot;8381&quot;: &quot;foobar1&quot;, &quot;8382&quot;: &quot;foobar2&quot;, &quot;8383&quot;: &quot;foobar3&quot;, &quot;8384&quot;: &quot;foobar4&quot; &#125;, &quot;timeout&quot;:300, &quot;method&quot;:&quot;aes-256-cfb&quot;, &quot;fast_open&quot;: false&#125; 然后需要重启shadowsockshadowsock命令如下1234启动：systemctl start shadowsocks.service停止：systemctl stop shadowsocks.service重启：systemctl restart shadowsocks.service状态：systemctl status shadowsocks.service CentOS7下需要开启端口开启端口firewall-cmd --zone=public --add-port=&lt;端口号&gt;/tcp --permanent例如firewall-cmd --zone=public --add-port=80/tcp --permanent重启防火墙firewall-cmd --reload最后在登录阿里云网站管理ECS添加规则最后需要重启服务器后规则才能生效reboot Shadowsocks 客户端下载 iPhone FirstWingy Windows shadowsocks 或者百度云链接 密码:t3t5 Mac shadowsocks-NG 或者 百度云链接 密码: br8d Andriod 百度云链接 密码: ev8f 使用KCPTun加速Shadowsocks(个人测试阿里云ECS无法使用，可在其他VPS上使用,vultr 测试可使用)KCPTun服务安装123456// 下载脚本wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh// 赋予权限chmod +x ./kcptun.sh// 执行脚本./kcptun.sh]]></content>
+      <categories>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>科学上网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS7获取Mac地址]]></title>
+    <url>%2Fa761552360.github.io%2FiOS7%E8%8E%B7%E5%8F%96Mac%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[1234567891011121314#import &lt;NetworkExtension/NetworkExtension.h&gt;#import &lt;SystemConfiguration/CaptiveNetwork.h&gt;- (NSString *)getMacAddress &#123; NSArray *array = CFBridgingRelease(CNCopySupportedInterfaces()); NSDictionary *info = nil; for (NSString *interface in array) &#123; info = CFBridgingRelease(CNCopyCurrentNetworkInfo((CFStringRef)interface)); if (info &amp;&amp;[info count]) &#123; break; &#125; &#125; return info[@"BSSID"];&#125;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 乐播投屏SDK]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E4%B9%90%E6%92%AD%E6%8A%95%E5%B1%8FSDK%2F</url>
+    <content type="text"><![CDATA[在头部添加 1234#import &lt;HPCastLink/HPCastLink.h&gt;#import &lt;HPCastLink/HPDevicesService.h&gt;//添加代理&lt;HPCastSearchDelegate, HPCastLinkDelegate&gt; 初始化 123456789101112[[HPCastLink sharedCastLink]appkeyVerify:@"&lt;AppKey&gt;"];[HPCastLink sharedCastLink].delegate = self; [HPCastLink sharedCastLink].enableDLNA = YES; [[HPCastLink sharedCastLink]setBackgroundPlay:NO]; [[HPCastLink sharedCastLink]castServiceDiscoveryDelegate:self]; [[HPCastLink sharedCastLink]castServiceDiscoveryBlock:^(NSArray&lt;HPDevicesService *&gt; *response) &#123; [self.dataArray removeAllObjects]; [self.dataArray addObjectsFromArray:response]; [self.tableView reloadData]; [[HPCastLink sharedCastLink]castServiceStopDiscovery]; &#125;]; 连接方法 123456[[HPCastLink sharedCastLink]castStartPlay:HPCastMediaTypeVideo url:@"http://demon-1252098972.costj.myqcloud.com/562151.MOV" startPosition:0 superViewController:self completeBlock:^(HPCastMirrorResults response) &#123; NSLog(@"%lu",(unsigned long)response); NSLog(@"==============%d",[HPCastLink sharedCastLink].isMirrorTv); [[HPCastLink sharedCastLink]castDeviceVolume:0]; &#125;]; 代理方法 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879#pragma mark HPCastSearchDelegate// 是否有投屏的电视设备(时刻监听变化) YES：有投屏设备,即显示投屏按钮- (void)isHaveCastTVChange:(BOOL)isHave &#123; NSLog( @"isHave = %d",isHave);&#125;/** 设备连接成功 */-(void)devicesConnectSucceed&#123; NSLog( @"设备连接成功");&#125;/** TV投屏URL播放失败 */- (void)tvVideoCastFailure&#123; NSLog( @"TV投屏URL播放失败");&#125;/** TV视频结束播放 */- (void)tvVideoEndPlay&#123; NSLog( @"TV视频结束播放");&#125;/** 视频播放进度返回 （回调频率为一秒一次） @param progress 进度 */- (void)videoDynamicPlayProgress:(HPProgress)progress&#123; _label.text = [NSString stringWithFormat:@"%ld:%ld",(long)progress.duration,(long)progress.position]; NSLog( @"视频播放进度返回");&#125;/** 视频播放状态改变时触发 @param state 播放状态 */- (void)videoPlayStateChangeWithState:(HPPlayState)state&#123; NSLog( @"视频播放状态改变时触发");&#125;/** 媒体音量改变时触发 @param volume 音量 */- (void)multimediaVolumeChangeWithVolume:(HPVolume)volume&#123; NSLog( @"媒体音量改变时触发");&#125;/** 设备连接断开 */- (void)devicesDisconnect&#123; NSLog( @"设备连接断开");&#125;/** TV端透传过来的字符串 @param message 透传数据 */- (void)receivedTVRemoteControlStr:(NSString *)message&#123; NSLog( @"TV端透传过来的字符串====%@",message);&#125;/** TV端透传过来的数据 @param data 仅支持json 或 xml格式，开发时发送端与接收端约定好格式，使用正确的格式解析数据 */- (void)receivedTVRemoteControlData:(NSData *)data&#123; NSLog( @"TV端透传过来的数据======%@",data);&#125; 控制方法 1234[[HPCastLink sharedCastLink]castPlay];//继续播放[[HPCastLink sharedCastLink]castPause];//暂停[[HPCastLink sharedCastLink]disconnectDevice];//停止投屏]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS PresentViewController 自定义动画效果]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-PresentViewController-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%2F</url>
+    <content type="text"><![CDATA[首先创建一个继承与NSObject的类 Push pop 效果.h123@interface PlayListTransition : NSObject&lt;UIViewControllerAnimatedTransitioning&gt;@end .m12345@implementation PlayListTransition//// 返回动画的时间- (NSTimeInterval)transitionDuration:(nullable id &lt;UIViewControllerContextTransitioning&gt;)transitionContext&#123; return 0.5;&#125; 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354/** 定义动画效果 */- (void)animateTransition:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext&#123; UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]; UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]; //转场的容器图，动画完成之后会消失 UIView *containerView = [transitionContext containerView]; UIView *fromView = nil; UIView *toView = nil; if ([transitionContext respondsToSelector:@selector(viewForKey:)]) &#123; fromView = [transitionContext viewForKey:UITransitionContextFromViewKey]; toView = [transitionContext viewForKey:UITransitionContextToViewKey]; &#125;else&#123; fromView = fromViewController.view; toView = toViewController.view; &#125; //对应关系 BOOL isPresent = (toViewController.presentingViewController == fromViewController); CGRect fromFrame = [transitionContext initialFrameForViewController:fromViewController]; CGRect toFrame = [transitionContext finalFrameForViewController:toViewController]; if (isPresent) &#123; fromView.frame = fromFrame; toView.frame = CGRectOffset(toFrame, toFrame.size.width, 0); [containerView addSubview:toView]; &#125;else &#123; fromView.frame = toFrame; toView.frame = CGRectOffset(fromFrame, -fromFrame.size.width, 0); [containerView addSubview:toView]; &#125; NSTimeInterval transitionDuration = [self transitionDuration:transitionContext]; [UIView animateWithDuration:transitionDuration animations:^&#123; if (isPresent) &#123; toView.frame = toFrame; fromView.frame = CGRectOffset(fromFrame, fromFrame.size.width*0.3*-1, 0); &#125;else &#123; fromView.frame = fromFrame; toView.frame = CGRectOffset(toFrame, 0, 0); &#125; &#125; completion:^(BOOL finished) &#123; BOOL isCancelled = [transitionContext transitionWasCancelled]; if (isCancelled) [toView removeFromSuperview]; [transitionContext completeTransition:!isCancelled]; &#125;];&#125; 然后在present时候添加代理&lt;UIViewControllerTransitioningDelegate&gt; 12345678UIViewConrtoller *vc = [[UIViewConrtoller alloc]init]; //present模式设为自定义// vc.modalPresentationStyle = UIModalPresentationOverCurrentContext; vc.transitioningDelegate = self; [self presentViewController:vc animated:YES completion:^&#123; &#125;]; 添加代理方法 12345678910-(id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source &#123; PlayListTransition *tran = [[FTXPlayListTransition alloc] init]; return tran;&#125;- (id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForDismissedController:(UIViewController *)dismissed &#123; PlayListTransition *tran = [[FTXPlayListTransition alloc] init]; return tran;&#125; 其他效果:小窗口动画 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657- (void)animateTransition:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext&#123; if (self.animationType) &#123; //1 从过渡上下文中取出目的View 用特有的key值获取哦 (也可以先获取目标视图控制器再取出它的view) UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey]; //2 再得到过渡的容器View 用于在动画中呈现出toView UIView * containerView = [transitionContext containerView]; //toView.alpha = 0;//将目标视图加入到转场容器中使其透明 [containerView addSubview:toView]; //3 接下来设置要呈现出来的View的大小等属性 toView.layer.cornerRadius = 20.f; CGRect rect = toView.frame; //a 使其出来的时候是从上往下 rect.origin.y = - rect.size.height; //b 使其从中心位置变大到指定位置 // 实用与collectionCell中 暂时xxx toView.frame = rect; toView.layer.masksToBounds = YES; [UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:2 options:UIViewAnimationOptionCurveEaseInOut animations:^&#123; CATransform3D toViewTransform = toView.layer.transform; //通过之前设置的位置或大小 等在这里改变位置 大小等来显示动画效果 toViewTransform = CATransform3DTranslate(toViewTransform, 0, rect.size.height, 0); //参数的具体解释看这里哦[参数解释](http://blog.sina.com.cn/s/blog_51a995b70101mz3q.html) toViewTransform = CATransform3DScale(toViewTransform, 0.8, 0.5, 1); toView.layer.transform = toViewTransform; //toView.alpha = 1; &#125; completion:^(BOOL finished) &#123; //动画结束 转场结束 [transitionContext completeTransition:![transitionContext transitionWasCancelled]]; &#125;]; &#125;else &#123; UIViewController * fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]; UIView *fromView = fromVC.view; //执行的dismiss动画 [UIView animateWithDuration:1.1 delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:5 options:UIViewAnimationOptionCurveEaseInOut animations:^&#123; //如果在debug中打印如下结果，是因为：动画时间是1(具体原因不明，经多次调试只要动画时间不是1就OK) //stiffness must be greater than 0. 刚度必须大于0; //damping must be greater than or equal to 0. 阻尼必须大于或等于0; CATransform3D fromViewTransform = fromView.layer.transform; fromViewTransform = CATransform3DScale(fromViewTransform, 1.5, 1.5, 1); fromView.layer.transform = fromViewTransform; fromView .alpha = 0; &#125; completion:^(BOOL finished) &#123; // [transitionContext completeTransition:![transitionContext transitionWasCancelled]]; &#125;]; &#125;&#125; 其他效果:翻页效果 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051- (void)animateTransition:(id &lt;UIViewControllerContextTransitioning&gt;)transitionContext&#123; UIViewController * fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]; UIViewController * toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]; UIView * container = [transitionContext containerView]; [container addSubview:toVC.view]; [container bringSubviewToFront:fromVC.view]; // 改变m34 CATransform3D transfrom = CATransform3DIdentity; transfrom.m34 = -0.002; container.layer.sublayerTransform = transfrom; // 设置archPoint和position CGRect initalFrame = [transitionContext initialFrameForViewController:fromVC]; toVC.view.frame = initalFrame; fromVC.view.frame = initalFrame; fromVC.view.layer.anchorPoint = CGPointMake(0, 0.5); fromVC.view.layer.position = CGPointMake(0, initalFrame.size.height / 2.0); // 添加阴影效果 CAGradientLayer * shadowLayer = [[CAGradientLayer alloc] init]; shadowLayer.colors =@[ [UIColor colorWithWhite:0 alpha:1], [UIColor colorWithWhite:0 alpha:0.5], [UIColor colorWithWhite:1 alpha:0.5] ]; shadowLayer.startPoint = CGPointMake(0, 0.5); shadowLayer.endPoint = CGPointMake(1, 0.5); shadowLayer.frame = initalFrame; UIView * shadow = [[UIView alloc] initWithFrame:initalFrame]; shadow.backgroundColor = [UIColor clearColor]; [shadow.layer addSublayer:shadowLayer]; [fromVC.view addSubview:shadow]; shadow.alpha = 0; // 动画 [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0 options:2 animations:^&#123; fromVC.view.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1, 0); shadow.alpha = 1.0; &#125; completion:^(BOOL finished) &#123; fromVC.view.layer.anchorPoint = CGPointMake(0.5, 0.5); fromVC.view.layer.position = CGPointMake(CGRectGetMidX(initalFrame), CGRectGetMidY(initalFrame)); fromVC.view.layer.transform = CATransform3DIdentity; [shadow removeFromSuperview]; [transitionContext completeTransition:YES]; &#125;];&#125; 其他效果:左下放大缩小 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#define Button_Width 50.f#define Button_Space 10.f- (void)animateTransition:(id &lt;UIViewControllerContextTransitioning&gt;)transitionContext &#123; UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]; UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]; UIView * toView = toViewController.view; UIView * fromView = fromViewController.view; if (self.animationType == 1) &#123; // 这个方法能够高效的将当前显示的view截取成一个新的view.你可以用这个截取的view用来显示.例如,也许你只想用一张截图来做动画,毕竟用原始的view做动画代价太高.因为是截取了已经存在的内容,这个方法只能反应出这个被截取的view当前的状态信息,而不能反应这个被截取的view以后要显示的信息.然而,不管怎么样,调用这个方法都会比将view做成截图来加载效率更高. UIView * snap = [toView snapshotViewAfterScreenUpdates:YES]; [transitionContext.containerView addSubview:snap]; [snap setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - Button_Width - Button_Space, [UIScreen mainScreen].bounds.size.height - Button_Width - Button_Space, Button_Width, Button_Width)]; [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^&#123; [snap setFrame:[UIScreen mainScreen].bounds]; &#125; completion:^(BOOL finished) &#123; [UIView animateWithDuration:0.5 animations:^&#123; [[transitionContext containerView] addSubview:toView]; snap.alpha = 0; &#125; completion:^(BOOL finished) &#123; [snap removeFromSuperview]; [transitionContext completeTransition:![transitionContext transitionWasCancelled]]; &#125;]; &#125;]; &#125; else &#123; UIView * snap2 = [toView snapshotViewAfterScreenUpdates:YES]; [transitionContext.containerView addSubview:snap2]; UIView * snap = [fromView snapshotViewAfterScreenUpdates:YES]; [transitionContext.containerView addSubview:snap]; [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^&#123; [snap setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - Button_Width - Button_Space+ (Button_Width/2), [UIScreen mainScreen].bounds.size.height - Button_Width - Button_Space + (Button_Width/2), 0, 0)]; &#125; completion:^(BOOL finished) &#123; [UIView animateWithDuration:0.5 animations:^&#123; //snap.alpha = 0; &#125; completion:^(BOOL finished) &#123; [snap removeFromSuperview]; [snap2 removeFromSuperview]; [[transitionContext containerView] addSubview:toView]; // 切记不要忘记了噢 [transitionContext completeTransition:![transitionContext transitionWasCancelled]]; &#125;]; &#125;]; &#125;&#125;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CenterOS7.0 安装Nginx问题]]></title>
+    <url>%2Fa761552360.github.io%2FCenterOS7-0-%E5%AE%89%E8%A3%85Nginx%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[外网无法访问（需要打开防火墙80端口）1firewall-cmd --zone=public --add-port=80/tcp --permanent 防火墙未开启（FirewallD is not running）1systemctl status firewalld#启动 Failed to start firewalld.service: Unit is masked.12# systemctl status firewalld# systemctl unmask firewalld nginx命令12nginx -s stop #关闭nginx -s reload#重启]]></content>
+      <categories>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -108,12 +131,115 @@
   <entry>
     <title><![CDATA[Mac Python2.7 安装MySQLdb问题解决]]></title>
     <url>%2Fa761552360.github.io%2FMac-Python2-7-%E5%AE%89%E8%A3%85MySQLdb%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
-    <content type="text"><![CDATA[首先卸载旧版本12pip uninstall MySQL-pythonsudo pip uninstall MySQL-python 然后重新安装12brew install mysql --universalsudo pip install MySQL-python 问题错误： 解决 Reason: image not found错误 12sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib/usr/lib/libmysqlclient.18.dylibsudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql pip安装时报错（注意电脑操作系统是32还是64） 12345PATH=&quot;/usr/local/mysql/bin:$&#123;PATH&#125;&quot;export PATHexport DYLD_LIBRARY_PATH=/usr/local/mysql/lib/export VERSIONER_PYTHON_PREFER_64_BIT=noexport VERSIONER_PYTHON_PREFER_32_BIT=yes 错误 1234567File &quot;mysql.py&quot;, line 4, in &lt;module&gt; import MySQLdb File &quot;/Library/Python/2.7/site-packages/MySQLdb/__init__.py&quot;, line 19, in &lt;module&gt; import _mysqlImportError: dlopen(/Library/Python/2.7/site-packages/_mysql.so, 2): no suitable image found. Did find:/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture 解决办法1sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /Library/Python/2.7/site-packages/_mysql.so]]></content>
+    <content type="text"><![CDATA[首先卸载旧版本12pip uninstall MySQL-pythonsudo pip uninstall MySQL-python 然后重新安装12brew install mysql --universalsudo pip install MySQL-python 问题错误： 解决 Reason: image not found错误 12sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib/usr/lib/libmysqlclient.18.dylibsudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql pip安装时报错（注意电脑操作系统是32还是64） 12345PATH="/usr/local/mysql/bin:$&#123;PATH&#125;"export PATHexport DYLD_LIBRARY_PATH=/usr/local/mysql/lib/export VERSIONER_PYTHON_PREFER_64_BIT=noexport VERSIONER_PYTHON_PREFER_32_BIT=yes 错误 1234567File &quot;mysql.py&quot;, line 4, in &lt;module&gt; import MySQLdb File &quot;/Library/Python/2.7/site-packages/MySQLdb/__init__.py&quot;, line 19, in &lt;module&gt; import _mysqlImportError: dlopen(/Library/Python/2.7/site-packages/_mysql.so, 2): no suitable image found. Did find:/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture/Library/Python/2.7/site-packages/_mysql.so: mach-o, but wrong architecture 解决办法1sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /Library/Python/2.7/site-packages/_mysql.so]]></content>
+      <categories>
+        <category>程序</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[iOS 复制到剪切板]]></title>
     <url>%2Fa761552360.github.io%2FiOS-%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[12UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];pasteboard.string = self.label.text;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS-Massory 设置最大最小约束]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-Massory-%E8%AE%BE%E7%BD%AE%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E7%BA%A6%E6%9D%9F%2F</url>
+    <content type="text"><![CDATA[12make.right.greaterThanOrEqualTo(self.numLab.mas_left).offset(-10);make.bottom.lessThanOrEqualTo(self.view.mas_bottom);]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 防止push多次]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E9%98%B2%E6%AD%A2push%E5%A4%9A%E6%AC%A1%2F</url>
+    <content type="text"><![CDATA[需要重写1pushViewController: animated:YES 和delegate中1- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 修改textField的placeholder的字体颜色、大小]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E4%BF%AE%E6%94%B9textField%E7%9A%84placeholder%E7%9A%84%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2%E3%80%81%E5%A4%A7%E5%B0%8F%2F</url>
+    <content type="text"><![CDATA[123textField.placeholder = @"username is in here!"; [textField setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"]; [textField setValue:[UIFont boldSystemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[OC tableview多选]]></title>
+    <url>%2Fa761552360.github.io%2FOC-tableview%E5%A4%9A%E9%80%89%2F</url>
+    <content type="text"><![CDATA[代理 1234567891011121314151617181920212223- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath &#123; return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;&#125; //侧滑允许编辑cell- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath&#123; return YES;&#125; //取消选择cell-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath&#123;// UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath]; CommodityConfigModel *model = self.dataArray[indexPath.row]; [self.selectArray addObject:model.commodity_id]; self.isAllSelect = NO;&#125;//选择cell- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath&#123;// UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath]; CommodityConfigModel *model = self.dataArray[indexPath.row]; [self.selectArray addObject:model.commodity_id];&#125; 加判断 123456789101112131415161718- (void)allSelectAction &#123; self.isAllSelect = 1-self.isAllSelect; if (_isAllSelect) &#123; for (int i = 0; i &lt; self.dataArray.count; i ++) &#123; CommodityConfigModel *model = self.dataArray[i]; NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0]; [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop]; [self.selectArray addObject:model.commodity_id]; &#125; &#125;else &#123; for (int i = 0; i &lt; self.dataArray.count; i ++) &#123; NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0]; [self.tableView deselectRowAtIndexPath:indexPath animated:YES]; &#125; [self.selectArray removeAllObjects]; &#125;&#125;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 保存图片到相册]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%88%B0%E7%9B%B8%E5%86%8C%2F</url>
+    <content type="text"><![CDATA[12345678//画图+ (UIImage *)snapshot:(UIView *)view size:(CGSize )size&#123; UIGraphicsBeginImageContextWithOptions(size,YES,0); [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES]; UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext(); return image;&#125; 1234//保存- (void)saveImageToPhotos:(UIImage*)savedImage &#123; UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);&#125; 12345678910- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo &#123; NSString *msg = nil ; if(error != NULL)&#123; msg = @"保存图片失败" ; &#125;else&#123; msg = @"保存图片成功" ; &#125; UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil]; [alert show];&#125;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[OC 换算高德经纬度问题]]></title>
+    <url>%2Fa761552360.github.io%2FOC-%E6%8D%A2%E7%AE%97%E9%AB%98%E5%BE%B7%E7%BB%8F%E7%BA%AC%E5%BA%A6%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980//根据经纬度 计算两点距离+(double)CalculateTheDistanceWithLon1:(double) lon1 Lat1:(double) lat1 Lon2:(double) lon2 Lat2:(double) lat2&#123; double er = 6371393.0f;//地球半径 //第一个位置的经纬度 double radlong1 = M_PI*lon1/180.0f; double radlat1 = M_PI*lat1/180.0f; //第二个位置的经纬度 double radlat2 = M_PI*lat2/180.0f; double radlong2 = M_PI*lon2/180.0f; //判断经纬度的正负 if( radlat1 &lt; 0 ) radlat1 = M_PI/2 + fabs(radlat1); if( radlat1 &gt; 0 ) radlat1 = M_PI/2 - fabs(radlat1); if( radlat2 &lt; 0 ) radlat2 = M_PI/2 + fabs(radlat2); if( radlat2 &gt; 0 ) radlat2 = M_PI/2 - fabs(radlat2); if( radlong2 &lt; 0 ) radlong2 = M_PI*2 - fabs(radlong2); double x1 = er * cos(radlong1) * sin(radlat1); double y1 = er * sin(radlong1) * sin(radlat1); double z1 = er * cos(radlat1); double x2 = er * cos(radlong2) * sin(radlat2); double y2 = er * sin(radlong2) * sin(radlat2); double z2 = er * cos(radlat2); double d = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)+(z1-z2)*(z1-z2)); double theta = acos((er*er+er*er-d*d)/(2*er*er)); double dist = theta * er; //返回最终的距离 return dist;&#125; static const double a = 6378245.0;static const double ee = 0.00669342162296594323;static const double pi = M_PI;//static const double xPi = M_PI * 3000.0 / 180.0;+ (CLLocationCoordinate2D)transformFromWGSToGCJ:(CLLocationCoordinate2D)wgsLoc &#123; CLLocationCoordinate2D adjustLoc; if([self isLocationOutOfChina:wgsLoc]) &#123; adjustLoc = wgsLoc; &#125; else &#123; double adjustLat = [self transformLatWithX:wgsLoc.longitude - 105.0 withY:wgsLoc.latitude - 35.0]; double adjustLon = [self transformLonWithX:wgsLoc.longitude - 105.0 withY:wgsLoc.latitude - 35.0]; long double radLat = wgsLoc.latitude / 180.0 * pi; long double magic = sin(radLat); magic = 1 - ee * magic * magic; long double sqrtMagic = sqrt(magic); adjustLat = (adjustLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * pi); adjustLon = (adjustLon * 180.0) / (a / sqrtMagic * cos(radLat) * pi); adjustLoc.latitude = wgsLoc.latitude + adjustLat; adjustLoc.longitude = wgsLoc.longitude + adjustLon; &#125; return adjustLoc;&#125; + (double)transformLatWithX:(double)x withY:(double)y &#123; double lat = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * sqrt(fabs(x)); lat += (20.0 * sin(6.0 * x * pi) + 20.0 *sin(2.0 * x * pi)) * 2.0 / 3.0; lat += (20.0 * sin(y * pi) + 40.0 * sin(y / 3.0 * pi)) * 2.0 / 3.0; lat += (160.0 * sin(y / 12.0 * pi) + 320 * sin(y * pi / 30.0)) * 2.0 / 3.0; return lat;&#125; + (double)transformLonWithX:(double)x withY:(double)y &#123; double lon = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * sqrt(fabs(x)); lon += (20.0 * sin(6.0 * x * pi) + 20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0; lon += (20.0 * sin(x * pi) + 40.0 * sin(x / 3.0 * pi)) * 2.0 / 3.0; lon += (150.0 * sin(x / 12.0 * pi) + 300.0 * sin(x / 30.0 * pi)) * 2.0 / 3.0; return lon;&#125;#pragma mark - 判断是不是在中国+ (BOOL)isLocationOutOfChina:(CLLocationCoordinate2D)location &#123; if (location.longitude &lt; 72.004 || location.longitude &gt; 137.8347 || location.latitude &lt; 0.8293 || location.latitude &gt; 55.8271) return YES; return NO;&#125;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[OC Tableview侧滑按钮自定义]]></title>
+    <url>%2Fa761552360.github.io%2FOC-Tableview%E4%BE%A7%E6%BB%91%E6%8C%89%E9%92%AE%E8%87%AA%E5%AE%9A%E4%B9%89%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839//侧滑允许编辑cell- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath&#123; return YES;&#125;////执行删除操作//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath&#123;// NSLog(@"删除删除删除删除删除删除删除删除删除");//&#125;////侧滑出现的文字//- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath&#123;// return @"删除";//&#125; - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath&#123; // 添加一个删除按钮 UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) &#123; [self deleteCommodityAction:indexPath.row]; &#125;]; deleteRowAction.backgroundColor = COLOR_RGB(255,88,112); // 添加一个更多按钮 NSString *str ; if (_upLoad == 0) &#123; str = @"下架"; &#125;else &#123; str = @"上架"; &#125; UITableViewRowAction *moreRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:str handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) &#123;// NSLog(@"点击了更多"); [self stateChangeAction:indexPath.row]; &#125;]; moreRowAction.backgroundColor = COLOR_RGB(255, 171, 88);// moreRowAction.backgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]; // 将设置好的按钮放到数组中返回 return @[deleteRowAction, moreRowAction]; &#125;]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS-设置中文]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%2F</url>
+    <content type="text"><![CDATA[info.plist 添加 Localization native development region 中Value 为China]]></content>
       <categories>
         <category>程序</category>
         <category>iOS</category>
@@ -132,6 +258,30 @@
       </categories>
       <tags>
         <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS 删除navigationController栈中得某一个viewController]]></title>
+    <url>%2Fa761552360.github.io%2FiOS-%E5%88%A0%E9%99%A4navigationController%E6%A0%88%E4%B8%AD%E5%BE%97%E6%9F%90%E4%B8%80%E4%B8%AAviewController%2F</url>
+    <content type="text"><![CDATA[今天遇到需要删除某一个viewController的需求，即，在一个导航控制器中想跳过某一个vc而pop到更前面的vc。首先尝试着在navigationController的所有方法中寻找removeXXX的方法或者deleteXXX的方法，但是翻遍navigationController的头文件也没有类似的方法，所以就只能曲线救国，采取其他方法实现类似的功能。在网上搜罗许久终于选择了下面的方法12345678NSMutableArray *marr = [[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers]; for (UIViewController *vc in marr) &#123; if ([vc isKindOfClass:[theVCYouWantToRemove class]]) &#123; [marr removeObject:vc]; break; &#125; &#125; self.navigationController.viewControllers = marr; 记得break；否则会出一些小问题之前也试着使用过[self removeFromParentViewController];这个方法，但是会出现小得问题就放弃使用了。]]></content>
+      <categories>
+        <category>程序</category>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[pip安装报错]]></title>
+    <url>%2Fa761552360.github.io%2Fpip%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[安装一些库的时候会报错如下:12345Installing collected packages: sixFound existing installation: six 1.4.1DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project.Uninstalling six-1.4.1:... 把安装的命令改成sudo pip install libName --upgrade --ignore-installed six即可解决(libName 库名)Mac自己安装了python3的可以用pip3原因是Apple预安装的这个six库出于安全原因被设置为sudo也不可以执行操作，所以需要依赖于高版本的库就需要更新six，但是没有six的权限，所以就会报错。]]></content>
+      <categories>
+        <category>程序</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>
